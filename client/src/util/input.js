@@ -25,8 +25,14 @@ window.addEventListener('keypress', function(e) {
   if (e.target.type === 'text') {return;}
 
   switch (e.key) {
-    case 'f':
-      helpers.alert('Someone pressed F.');
+    case 'w':
+      st.Game.flipTile();
+      break;
+    case 'a':
+      st.Game.moveLeft();
+      break;
+    case 'd':
+      st.Game.moveRight();
       break;
   }
 });

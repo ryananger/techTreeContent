@@ -16,7 +16,7 @@ const App = function() {
   const [targets, setTargets] = useState([]);
 
   const [updates, updateReact] = useState(0);
-  const updateInterval = 100;
+  const updateInterval = 10;
 
   var reactLoop = function() {
     if (!board) {
