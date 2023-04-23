@@ -5,29 +5,81 @@ import st            from 'ryscott-st';
 import {ax, helpers} from 'util';
 
 import Alert   from './Alert.jsx';
-import Login   from './Login.jsx';
+import Game from './Game/Game.js';
 
 var cookie = helpers.cookieParse();
+var tileSize = null;
 
 const App = function() {
-  const [user, setUser] = st.newState('user', useState(null));
   const [view, setView] = st.newState('view', useState('home'));
+  const [board, setBoard] = useState(null);
+  const [targets, setTargets] = useState([]);
 
-  useEffect(()=>{helpers.alert('This is an app with an alert.')});
+  const [updates, updateReact] = useState(0);
+  const updateInterval = 100;
+
+  var reactLoop = function() {
+    if (!board) {
+      tileSize = Math.floor((document.getElementById('tiles').clientWidth)/8);
+    }
+
+    setTimeout(function() {
+      updateReact(updates + 1);
+      setBoard(Game.board);
+      setTargets(Game.targets);
+    }, updateInterval);
+  };
+
+  var renderBoard = function() {
+    var rendered = [];
+
+    for (var i = 0; i < 12; i++) {
+      for (var j = 0; j < 8; j++) {
+        var tile = (
+          <div className='tileContainer v' key={`${i}_${j}`} style={{width: tileSize}}>
+            {board[i][j] && <div className='tile v'>{board[i][j]}</div>}
+          </div>
+        );
+
+        rendered.push(tile);
+      }
+    }
+
+    return rendered;
+  };
+
+  var renderTargets = function() {
+    var rendered = [];
+
+    for (var j = 0; j < 8; j++) {
+      var target = (
+        <div className='targetContainer v' key={`${j}`} style={{width: tileSize}}>
+          {targets[j] && <div className='target v'>{targets[j]}</div>}
+        </div>
+      );
+
+      rendered.push(target);
+    }
+
+    return rendered;
+  };
+
+  useEffect(reactLoop, [updates]);
+  useEffect(Game.step, []);
 
   return (
     <div id='app' className='app v'>
       <Alert />
-      <h1>
-        App
-      </h1>
-      <div className='v'>
-        <h3>This is a template app that uses 'ryscott-st' for state management.</h3>
-        <br/><br/>
-        <h2>Press F to create an alert.</h2>
+      <div className='game' style={{position: 'relative'}}>
+        <div id='tiles' className='tiles h'>
+          {board && renderBoard()}
+        </div>
+        <div className='targets h'>
+          {targets && renderTargets()}
+        </div>
       </div>
     </div>
-  )
+  );
 };
 
 export default App;

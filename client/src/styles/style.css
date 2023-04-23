@@ -1,5 +1,5 @@
 :root {
-  --bg: #ffd3c4;
+  --bg: #e9918e;
   --brown: #86716a;
   --gold: #ffbc90;
   --salmon: #ff9d90;
@@ -10,6 +10,7 @@
   --cream: rgb(255, 239, 229);
 
   --lightText: rgb(255, 232, 217);
+  --trCream: rgba(255, 232, 217, 0.747);
   --darkText: #3d1a15;
 
   --shadow: #39161096;
@@ -88,4 +89,53 @@ h1, h2, h3 {
   visibility: hidden;
   opacity: 0;
   transition: visibility 0s 1s, opacity 1s linear;
+}
+
+/* BOARD */
+
+.game {
+  height: 80svh;
+  aspect-ratio: 9/16;
+  background: var(--trCream);
+  border-radius: 12px;
+  padding: 1vh;
+  box-sizing: border-box;
+}
+
+.tiles, .targets {
+  width: 100%;
+  padding: 0;
+  justify-content: space-between;
+  align-items: flex-start;
+  flex-wrap: wrap;
+  border-bottom: 2px solid var(--cream);
+  font-size: 24px;
+}
+
+.targets {
+  border: none;
+}
+
+.tileContainer, .targetContainer {
+  aspect-ratio: 1;
+  padding: 0;
+}
+
+.tile, .target {
+  margin: 4px;
+  width: calc(100% - 8px);
+  aspect-ratio: 1;
+  border-radius: 12px;
+  text-align: center;
+  justify-content: center;
+  padding: 0;
+}
+
+.tile {
+  background: var(--cream);
+}
+
+.target {
+  padding: 0;
+  justify-content: center;
 }
