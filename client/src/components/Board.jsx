@@ -13,7 +13,7 @@ const Board = function() {
 
   const [moves, setMoves] = st.newState('moves', useState(0));
 
-  const tileSize = st.tileSize = isMobile ? 60 : 80;
+  const tileSize = st.tileSize;
 
   var mountBoard = st.mountBoard = function(n) {
     var sz = n || size;

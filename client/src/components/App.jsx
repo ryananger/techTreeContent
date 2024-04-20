@@ -7,6 +7,7 @@ import {input} from 'util';
 import Board from './Board.jsx';
 
 const isMobile = window.innerWidth < 720;
+const tileSize = st.tileSize = isMobile ? 60 : 80;
 
 const App = function() {
   var renderHead = function() {

@@ -2,6 +2,8 @@ import React, {useEffect, useState} from 'react';
 
 import st from 'ryscott-st';
 
+import Grain from './Grain.jsx';
+
 const Tile = function({coords}) {
   const [board, setBoard] = st.handleBoard;
   const [{x, y}, setPos] = useState(coords);
@@ -47,7 +49,10 @@ const Tile = function({coords}) {
 
   return (
     <div id={'tile' + num}className='tileContainer v' style={{...style, width: tileSize + 'px'}} onClick={moveTile}>
-      <div className='tile v'>{num}</div>
+      <div className='tile v'>
+        <Grain/>
+        {num}
+      </div>
     </div>
   );
 };

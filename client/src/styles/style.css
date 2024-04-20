@@ -28,6 +28,8 @@ html, body, #root, .app {
   width: 100%;
   font-family: Jost;
 
+  background: radial-gradient(circle at bottom left, #c2edba, transparent 40%),
+              radial-gradient(circle at top right, #edddba9e, transparent);
   background-color: var(--bg);
   color: var(--darkText);
 }
@@ -122,10 +124,20 @@ a, a:hover, a:visited {
   text-align: center;
   justify-content: center;
   padding: 0;
+  background: var(--cream);
+  box-shadow: 0 2px 0 0 #d19494;
+  position: relative;
+  overflow: hidden;
 }
 
-.tile {
-  background: var(--cream);
+.woodgrain {
+  pointer-events: none;
+  user-select: none;
+  position: absolute;
+}
+
+.woodgrain path {
+  fill: #d1949452;
 }
 
 /* BUTTONS */
