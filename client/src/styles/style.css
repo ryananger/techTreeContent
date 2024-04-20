@@ -1,5 +1,5 @@
 :root {
-  --bg: #e9918e;
+  --bg: #b9d3af;
   --brown: #86716a;
   --gold: #ffbc90;
   --salmon: #ff9d90;
@@ -37,23 +37,24 @@ h1, h2, h3 {
 }
 
 .v {
-  flex: auto;
   display: flex;
   flex-direction: column;
-  justify-content: flex-start;
+  justify-content: space-between;
   align-items: center;
   padding: 2vh;
   box-sizing: border-box;
 }
 
 .h {
-  flex: auto;
   display: flex;
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
-  padding: 2vh;
   box-sizing: border-box;
+}
+
+a, a:hover, a:visited {
+  color: unset;
 }
 
 /* --- */
@@ -93,35 +94,27 @@ h1, h2, h3 {
 
 /* BOARD */
 
-.game {
-  height: 80svh;
-  aspect-ratio: 9/16;
-  background: var(--trCream);
-  border-radius: 12px;
-  padding: 1vh;
-  box-sizing: border-box;
-}
-
-.tiles, .targets {
-  width: 100%;
+.tiles {
   padding: 0;
   justify-content: space-between;
   align-items: flex-start;
   flex-wrap: wrap;
-  border-bottom: 2px solid var(--cream);
   font-size: 24px;
+  aspect-ratio: 1;
+  flex: none;
+  position: relative;
 }
 
-.targets {
-  border: none;
-}
-
-.tileContainer, .targetContainer {
+.tileContainer {
   aspect-ratio: 1;
   padding: 0;
+  position: absolute;
+  transition: top 0.25s cubic-bezier(0.14, 0.92, 0.87, 1), left 0.25s cubic-bezier(0.14, 0.92, 0.87, 1);
+  user-select: none;
+  cursor: pointer;
 }
 
-.tile, .target {
+.tile {
   margin: 4px;
   width: calc(100% - 8px);
   aspect-ratio: 1;
@@ -135,7 +128,19 @@ h1, h2, h3 {
   background: var(--cream);
 }
 
-.target {
+/* BUTTONS */
+
+.buttons {
   padding: 0;
+  width: 100%;
+}
+
+.button {
+  min-width: 48px;
+  height: 32px;
+  text-align: center;
   justify-content: center;
+  margin: 0 4px;
+  border: 1px solid #80ad6e;
+  border-radius: 4px;
 }

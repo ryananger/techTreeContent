@@ -1,85 +1,91 @@
 import React, {useEffect, useState} from 'react';
 
 import '../styles/style.css';
-import st            from 'ryscott-st';
-import {ax, helpers} from 'util';
+import st from 'ryscott-st';
+import {input} from 'util';
 
-import Alert   from './Alert.jsx';
-import Game from './Game/Game.js';
+import Tile from './Tile.jsx';
 
-var cookie = helpers.cookieParse();
-var tileSize = null;
+const isMobile = window.innerWidth < 720;
 
 const App = function() {
   const [view, setView] = st.newState('view', useState('home'));
-  const [board, setBoard] = useState(null);
-  const [targets, setTargets] = useState([]);
+  const [board, setBoard] = st.handleBoard = st.newState('board', useState(null));
+  const [size, setSize] = st.newState('size', useState(4));
 
-  const [updates, updateReact] = useState(0);
-  const updateInterval = 10;
+  const tileSize = st.tileSize = isMobile ? 60 : 80;
 
-  var reactLoop = function() {
-    if (!board) {
-      tileSize = Math.floor((document.getElementById('tiles').clientWidth)/8);
+  var mountBoard = st.mountBoard = function(n) {
+    var sz = n || size;
+    var b = [];
+    var t = [...Array(sz * sz).keys()].map(entry => entry + 1);
+
+    shuffleArray(t);
+
+    for (var i = 0; i < sz; i++) {
+      b[i] = [];
+
+      for (var j = 0; j < sz; j++) {
+        var num = (sz * i) + j;
+
+        if (t[num] === sz * sz) {
+          b[i][j] = -1;
+        } else {
+          b[i][j] = t[num];
+        }
+      }
     }
 
-    setTimeout(function() {
-      updateReact(updates + 1);
-      setBoard(Game.board);
-      setTargets(Game.targets);
-    }, updateInterval);
+    n && setSize(n);
+    setBoard(b);
   };
 
   var renderBoard = function() {
     var rendered = [];
 
-    for (var i = 0; i < 12; i++) {
-      for (var j = 0; j < 8; j++) {
-        var tile = (
-          <div className='tileContainer v' key={`${i}_${j}`} style={{width: tileSize}}>
-            {board[i][j] && <div className='tile v'>{board[i][j]}</div>}
-          </div>
-        );
+    for (let i = 0; i < size; i++) {
+      for (let j = 0; j < size; j++) {
+        let num = board[i][j];
+        let coords = {x: j, y: i};
 
-        rendered.push(tile);
+        rendered.push(<Tile key={num} coords={coords}/>);
       }
     }
 
     return rendered;
   };
 
-  var renderTargets = function() {
-    var rendered = [];
-
-    for (var j = 0; j < 8; j++) {
-      var target = (
-        <div className='targetContainer v' key={`${j}`} style={{width: tileSize}}>
-          {targets[j] && <div className='target v'>{targets[j]}</div>}
-        </div>
-      );
-
-      rendered.push(target);
-    }
-
-    return rendered;
-  };
-
-  useEffect(reactLoop, [updates]);
-  useEffect(Game.step, []);
+  useEffect(mountBoard, []);
+  useEffect(()=>{}, [board]);
 
   return (
     <div id='app' className='app v'>
-      <Alert />
-      <div className='game' style={{position: 'relative'}}>
-        <div id='tiles' className='tiles h'>
-          {board && renderBoard()}
-        </div>
-        <div className='targets h'>
-          {targets && renderTargets()}
-        </div>
+      {!isMobile && <small>press M to mix, and 3, 4, or 5 to set the size</small>}
+      {isMobile &&
+        <small className='buttons h'>
+          <div className='button v' onClick={()=>{mountBoard(size)}}>mix</div>
+          <div className='h'>
+            <div className='button v' onClick={()=>{mountBoard(3)}}>8</div>
+            <div className='button v' onClick={()=>{mountBoard(4)}}>15</div>
+            <div className='button v' onClick={()=>{mountBoard(5)}}>24</div>
+          </div>
+        </small>
+      }
+      <br/>
+      <div id='tiles' className='tiles h' style={{width: size * tileSize + 'px'}}>
+        {board && renderBoard()}
       </div>
+      <br/>
+      <small>created by <a href='https://linkedin.com/in/ryscott89'>_________</a></small>
     </div>
   );
+};
+
+var shuffleArray = function(array) {
+  for (let i = array.length - 1; i > 0; i--) {
+    const j = Math.floor(Math.random() * (i + 1));
+    [array[i], array[j]] = [array[j], array[i]];
+  }
 };
 
 export default App;

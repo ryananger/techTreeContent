@@ -25,14 +25,19 @@ window.addEventListener('keypress', function(e) {
   if (e.target.type === 'text') {return;}
 
   switch (e.key) {
-    case 'w':
-      st.Game.flipTile();
+    case 'm':
+      st.mountBoard();
       break;
-    case 'a':
-      st.Game.moveLeft();
+    case '3':
+      st.mountBoard(3);
       break;
-    case 'd':
-      st.Game.moveRight();
+    case '4':
+      st.mountBoard(4);
+      break;
+    case '5':
+      st.mountBoard(5);
       break;
   }
 });
+
+export default mouse;
