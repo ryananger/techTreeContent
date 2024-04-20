@@ -8,7 +8,8 @@
   "scripts": {
     "start": "webpack --mode=development -w",
     "dev": "webpack serve --open",
-    "server": "node server/index.js -w"
+    "server": "node server/index.js -w",
+    "deploy": "gh-pages -d client/dist"
   },
   "dependencies": {
     "babel-plugin-file-loader": "^2.0.0",
