@@ -11,6 +11,7 @@ const isMobile = window.innerWidth < 720;
 const App = function() {
   const [view, setView] = st.newState('view', useState('home'));
   const [board, setBoard] = st.handleBoard = st.newState('board', useState(null));
+  const [shuffled, setShuffled] = useState(false);
   const [size, setSize] = st.newState('size', useState(4));
 
   const tileSize = st.tileSize = isMobile ? 60 : 80;
@@ -20,7 +21,7 @@ const App = function() {
     var b = [];
     var t = [...Array(sz * sz).keys()].map(entry => entry + 1);
 
-    shuffleArray(t);
+    // shuffleArray(t);
 
     for (var i = 0; i < sz; i++) {
       b[i] = [];
@@ -36,8 +37,48 @@ const App = function() {
       }
     }
 
+    setShuffled(false);
     n && setSize(n);
     setBoard(b);
+  };
+
+  var shuffleBoard = function(num, dir) {
+    const count = num || 0;
+
+    if (count < 100) {
+      var adj;
+      var entries = [];
+
+      for (let y = 0; y < size; y++) {
+        for (let x = 0; x < size; x++) {
+          if (board[y][x] === -1) {
+            adj = {
+              top:    {val: board[y - 1]?.[x], dir: 'v'},
+              bottom: {val: board[y + 1]?.[x], dir: 'v'},
+              right:  {val: board[y]?.[x + 1], dir: 'h'},
+              left:   {val: board[y]?.[x - 1], dir: 'h'},
+            };
+          }
+        }
+      }
+
+      for (var key in adj) {
+        if (adj[key].val) {
+          if (!dir) {
+            entries.push(adj[key]);
+          } else if (adj[key].dir !== dir) {
+            entries.push(adj[key]);
+          }
+        }
+      }
+
+      var rand = Math.floor(Math.random() * entries.length);
+      var clickTile = document.getElementById('tile' + entries[rand].val);
+
+      clickTile.click();
+
+      setTimeout(()=>{shuffleBoard(count + 1, entries[rand].dir)}, 10);
+    }
   };
 
   var renderBoard = function() {
@@ -56,7 +97,12 @@ const App = function() {
   };
 
   useEffect(mountBoard, []);
-  useEffect(()=>{}, [board]);
+  useEffect(()=>{
+    if (board && !shuffled) {
+      setShuffled(true);
+      shuffleBoard();
+    }
+  }, [board]);
 
   return (
     <div id='app' className='app v'>

@@ -19,6 +19,7 @@
     "file-loader": "^6.2.0",
     "firebase": "^9.16.0",
     "firebaseui": "^6.0.2",
+    "gh-pages": "^6.1.1",
     "mongoose": "^6.8.3",
     "morgan": "^1.10.0",
     "path": "^0.12.7",

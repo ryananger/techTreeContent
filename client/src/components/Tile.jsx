@@ -46,7 +46,7 @@ const Tile = function({coords}) {
   if (num === -1) {return};
 
   return (
-    <div className='tileContainer v' style={{...style, width: tileSize + 'px'}} onClick={moveTile}>
+    <div id={'tile' + num}className='tileContainer v' style={{...style, width: tileSize + 'px'}} onClick={moveTile}>
       <div className='tile v'>{num}</div>
     </div>
   );
