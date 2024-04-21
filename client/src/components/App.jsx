@@ -2,7 +2,7 @@ import React, {useEffect, useState} from 'react';
 
 import '../styles/style.css';
 import st from 'ryscott-st';
-import {input} from 'util';
+import {mouse} from 'util';
 
 import Board from './Board.jsx';
 

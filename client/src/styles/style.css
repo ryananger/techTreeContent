@@ -30,6 +30,7 @@ html, body, #root, .app {
 
   background: radial-gradient(circle at bottom left, #c2edba, transparent 40%),
               radial-gradient(circle at top right, #edddba9e, transparent);
+
   background-color: var(--bg);
   color: var(--darkText);
 }
@@ -55,7 +56,9 @@ h1, h2, h3 {
   box-sizing: border-box;
 }
 
-a, a:hover, a:visited {
+a,
+a:hover,
+a:visited {
   color: unset;
 }
 
