@@ -34,7 +34,7 @@ const App = function() {
       <br/>
       <Board/>
       <br/>
-      <small>created by <a href='https://ryscott.xyz/portfolio'>_________</a></small>
+      <small><a href='https://ryscott.xyz/numberful'>numberful</a> | created by <a href='https://ryscott.xyz/portfolio'>_________</a></small>
     </div>
   );
 };
