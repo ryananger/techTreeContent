@@ -37,7 +37,7 @@ const App = function() {
       <small>
         <a href='https://ryscott.xyz/numberful'>numberful</a>&emsp; | &emsp;
         <a href='https://ryscott.xyz/sudoku'>sudoku</a>&emsp; | &emsp;
-        created by <a href='https://ryscott.xyz/portfolio'>_________</a>
+        created by <a href='https://earthpunk.art'>_________</a>
       </small>
     </div>
   );
