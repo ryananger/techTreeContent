@@ -13,11 +13,11 @@ const content = {
   courseHighlights: (
     <div className='v c'>
       <ul>
-        <li><strong>Foundations of Programming</strong>: Start with the basics of coding and logic. Learn JavaScript, the language of the web.</li>
-        <li><strong>Web Development Essentials</strong>: Master HTML and CSS to create beautiful websites. Get introduced to jQuery and understand its place in modern development.</li>
-        <li><strong>Front-End Development with React</strong>: Build interactive, single-page applications using React. Deploy your projects on GitHub Pages.</li>
-        <li><strong>Back-End Development</strong>: Create powerful servers with Node.js and Express. Learn to work with APIs to connect your front-end to your back-end.</li>
-        <li><strong>Databases and Cloud Services</strong>: Dive into MongoDB and learn database management. Explore MongoDB Atlas and cloud-based solutions.</li>
+        <li><strong>Foundations of Programming</strong>: Start with the basics of coding and logic. Learn JavaScript, the language of the web.</li><br/>
+        <li><strong>Web Development Essentials</strong>: Master HTML and CSS to create beautiful websites. Get introduced to jQuery and understand its place in modern development.</li><br/>
+        <li><strong>Front-End Development with React</strong>: Build interactive, single-page applications using React. Deploy your projects on GitHub Pages.</li><br/>
+        <li><strong>Back-End Development</strong>: Create powerful servers with Node.js and Express. Learn to work with APIs to connect your front-end to your back-end.</li><br/>
+        <li><strong>Databases and Cloud Services</strong>: Dive into MongoDB and learn database management. Explore MongoDB Atlas and cloud-based solutions.</li><br/>
         <li><strong>Artificial Intelligence and Machine Learning</strong>: Introduction to AI and its applications. Basics of machine learning and building simple models. Learn how to use ChatGPT and interact with AI through APIs.</li>
       </ul>
     </div>
@@ -49,8 +49,8 @@ const content = {
         <strong>Phone:</strong> 123-456-7890<br />
         <strong>Address:</strong> 123 Tech Lane, Innovation City, TX<br /><br />
         Follow us on social media for updates and news!<br />
-        <a href="https://facebook.com" target="_blank" rel="noreferrer">Facebook</a> |
-        <a href="https://twitter.com" target="_blank" rel="noreferrer">Twitter</a> |
+        <a href="https://facebook.com" target="_blank" rel="noreferrer">Facebook</a>&emsp;|&emsp;
+        <a href="https://twitter.com" target="_blank" rel="noreferrer">Twitter</a>&emsp;|&emsp;
         <a href="https://linkedin.com" target="_blank" rel="noreferrer">LinkedIn</a>
       </div>
     </div>

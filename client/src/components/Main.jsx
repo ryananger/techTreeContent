@@ -8,9 +8,9 @@ const Main = function() {
   return (
     <div>
       <Header />
-      <Section title='Unlock the Future with techTree Academy' content={content.unlockFuture} />
+      <Section title='Unlock the Future' content={content.unlockFuture} />
       <Section title='Course Highlights' content={content.courseHighlights} />
-      <Section title='Meet Our Instructors' content={content.meetInstructors} />
+      <Section title='Meet Your Instructor' content={content.meetInstructors} />
       <Section title='Join Us Today!' content={content.joinUs} />
       <Section title='Frequently Asked Questions' content={content.faq} />
       <Section title='Contact Us' content={content.contactUs} />

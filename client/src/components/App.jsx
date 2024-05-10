@@ -10,7 +10,7 @@ const isMobile = window.innerWidth < 720;
 
 const App = function() {
   return (
-    <div id='app' className='app v'>
+    <div id='app' className='app texture v'>
       <Main/>
     </div>
   );

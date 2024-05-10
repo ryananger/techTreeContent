@@ -21,7 +21,14 @@
   --shadow: #39161096;
 }
 
-html, body, #root, #app {
+html {
+  background: radial-gradient(circle at right, #a1eb8e59, transparent 90%);
+  background-color: var(--bg);
+}
+
+html, body, #root {
+  height: 100%;
+  overflow: hidden;
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
@@ -33,10 +40,11 @@ html, body, #root, #app {
 }
 
 #app {
-  /* background: radial-gradient(circle at bottom left, #c2edba, transparent 40%),
-              radial-gradient(circle at top right, #edddba9e, transparent); */
-
-  background-color: var(--bg);
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  overflow: scroll;
   color: var(--grass);
 }
 
@@ -103,6 +111,10 @@ a:visited {
   fill: #d1949452;
 }
 
+.texture {
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='4' height='4' viewBox='0 0 4 4'%3E%3Cpath fill='%232a2a2a' fill-opacity='1' d='M1 3h1v1H1V3zm2-2h1v1H3V1z'%3E%3C/path%3E%3C/svg%3E");
+}
+
 div {
   -webkit-tap-highlight-color: rgba(0,0,0,0);
 }
@@ -110,7 +122,7 @@ div {
 /* */
 
 header {
-  height: 70svh;
+  height: 95svh;
   padding: 4vh;
 }
 
