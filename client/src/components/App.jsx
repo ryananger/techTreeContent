@@ -9,6 +9,7 @@ import Foot from './Foot.jsx';
 import Section from './Section.jsx';
 import Future from './sections/Future.jsx';
 import Course from './sections/Course.jsx';
+import Curriculum from './sections/Curriculum.jsx';
 import Instructor from './sections/Instructor.jsx';
 import Apply from './sections/Apply.jsx';
 import FAQ from './sections/FAQ.jsx';
@@ -24,6 +25,7 @@ const App = function() {
       <ApplyFloat />
       <Section content={<Future/>}/>
       <Section content={<Course/>}/>
+      <Section content={<Curriculum/>}/>
       <Section content={<Instructor/>}/>
       <Section content={<Apply/>}/>
       <Section content={<FAQ/>}/>
