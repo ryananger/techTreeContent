@@ -68,12 +68,6 @@ h1, h2, h3 {
   box-sizing: border-box;
 }
 
-a,
-a:hover,
-a:visited {
-  color: unset;
-}
-
 /* --- */
 
 .alert {
@@ -170,7 +164,7 @@ section h2 {
   }
 }
 
-.content .v {
+.content div.v {
   width: 100%;
   padding: 0 0 4vh;
 }
@@ -199,18 +193,26 @@ section h2 {
 
 /**/
 
-.apply-button {
+.applyButton {
   background-color: var(--grass);
   border: none;
-  padding: 10px 20px;
   text-align: center;
   text-decoration: none;
-  display: inline-block;
-  font-size: 16px;
-  margin: 10px 0;
+  font-size: 2.4vh;
+  font-weight: 600;
+  margin: 2vh;
   cursor: pointer;
-  border-radius: 5px;
+  border-radius: 4px;
   color: var(--bg);
+  transition: font-size 0.1s;
+  height: 6vh;
+  width: unset;
+  aspect-ratio: 4;
+  box-sizing: border-box;
+}
+
+.applyButton:hover {
+  font-size: 2.8vh;
 }
 
 section:nth-of-type(1){
