@@ -68,6 +68,14 @@ h1, h2, h3 {
   box-sizing: border-box;
 }
 
+.anchor {
+  position: relative;
+}
+
+.float {
+  position: absolute;
+}
+
 /* --- */
 
 .alert {
@@ -123,8 +131,42 @@ header {
   text-align: center;
 }
 
+.headTitle {
+  top: 35%;
+  left: 25%;
+}
+
+.headTagline {
+  top: 45%;
+  left: 35%;
+}
+
+.headExtra {
+  font-size: 1.8vh;
+  top: 95%;
+  left: 55%;
+}
+
 section {
   width: 100%;
+}
+
+.sectionHead {
+  position: relative;
+  height: 24px;
+  width: 100%;
+  opacity: 0;
+  transition: opacity 0.25s;
+}
+
+.sectionHead:hover {
+  opacity: 1;
+}
+
+.minIcon {
+  position: absolute;
+  right: 8px;
+  cursor: pointer;
 }
 
 section h2 {
@@ -133,20 +175,25 @@ section h2 {
 }
 
 .content {
-  padding: 4vh 8vh;
+  padding: 2vh;
   height: 0svh;
   width: 100%;
   overflow: hidden;
-  transition: height 0.5s ease, opacity 2s;
+  transition: padding 0.5s, height 0.5s ease, opacity 2s;
 }
 
 .content.open {
+  padding: 12vh 16vh;
   height: 80svh;
 }
 
 @media (max-width: 1024px) {
+  .headExtra {
+    left: unset;
+  }
+
   .content {
-    padding: 8vh 4vh;
+    padding: 12vh 4vh;
     height: unset;
     max-height: 0svh;
     min-height: 0svh;
@@ -192,6 +239,17 @@ section h2 {
 }
 
 /**/
+
+.applyFloat {
+  position: fixed;
+  top: 0;
+  left: 0;
+  padding: 1vh 2vh;
+  border-radius: 0 0 1vh 0;
+  background-color: var(--bg);
+  font-weight: 600;
+  cursor: pointer;
+}
 
 .applyButton {
   background-color: var(--grass);

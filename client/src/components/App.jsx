@@ -13,13 +13,15 @@ import Instructor from './sections/Instructor.jsx';
 import Apply from './sections/Apply.jsx';
 import FAQ from './sections/FAQ.jsx';
 import Contact from './sections/Contact.jsx';
+import ApplyFloat from './ApplyFloat.jsx';
 
-const isMobile = window.innerWidth < 720;
+const isMobile = st.isMobile = window.innerWidth < 1024;
 
 const App = function() {
   return (
     <div id='app' className='app texture v'>
       <Head/>
+      <ApplyFloat />
       <Section content={<Future/>}/>
       <Section content={<Course/>}/>
       <Section content={<Instructor/>}/>
