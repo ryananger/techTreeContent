@@ -1,6 +1,6 @@
 import React, {useState, useEffect} from 'react';
 
-const Section = ({title, content}) => {
+const Section = ({content}) => {
   const [open, setOpen] = useState(false);
   const [vis, setVis] = useState('hidden');
 
@@ -17,7 +17,6 @@ const Section = ({title, content}) => {
   return (
     <section>
       <div className={`content ${open ? 'open' : ''} ${vis} v c`}>
-        <h2>{title}</h2>
         {content}
       </div>
     </section>

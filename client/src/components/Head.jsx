@@ -1,6 +1,6 @@
 import React from 'react';
 
-const Header = function() {
+const Head = function() {
   return (
     <header className='v c'>
       <h1>techTree Academy</h1>
@@ -9,4 +9,4 @@ const Header = function() {
   );
 };
 
-export default Header;
+export default Head;
