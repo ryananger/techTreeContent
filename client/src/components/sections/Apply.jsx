@@ -5,7 +5,7 @@ const Apply = function() {
     <>
     <h2>Join Us Today</h2>
     <div className='v c'>
-      Ready to embark on your tech journey? Apply now and take the first step towards mastering modern technology and unlocking endless opportunities.<br /><br />
+      Ready to embark on your tech journey? Apply now and take the first step towards mastering modern technology and unlock endless opportunities.<br /><br />
       <a href='#apply' className='applyButton v c'>Apply Now</a>
     </div>
     </>

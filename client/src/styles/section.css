@@ -24,7 +24,7 @@ section {
 }
 
 section h2 {
-  padding: 2vh 0 6vh;
+  padding: 2vh 0 4vh;
   text-align: center;
 }
 
@@ -33,7 +33,7 @@ section h2 {
   height: 0svh;
   width: 100%;
   overflow: hidden;
-  transition: padding 0.5s, height 0.5s ease, opacity 2s;
+  transition: padding 0.5s, height 0.5s ease, opacity 0.25s, visibility 0.25s;
 }
 
 .content.open {
@@ -47,12 +47,12 @@ section h2 {
 }
 
 
-section:nth-of-type(1){
+section:nth-of-type(3n - 2) {
   background-color: var(--grass);
   color: var(--bg);
 }
 
-section:nth-of-type(3){
+section:nth-of-type(3n){
   background: #2a2a2a;
   width: 90%;
   border-radius: 2vh;
@@ -61,24 +61,28 @@ section:nth-of-type(3){
   transition: margin-bottom 0.5s;
 }
 
-section:nth-of-type(3):has(.content.open) {
+section:nth-of-type(3n):has(.content.open) {
   margin-bottom: 10vh;
-}
-
-section:nth-of-type(4){
-  background-color: var(--grass);
-  color: var(--bg);
-}
-
-section:nth-of-type(6){
-  background-color: var(--grass);
-  color: var(--bg);
 }
 
 .futureImage,
 .instructorImage {
   flex: none;
   width: 40%;
+}
+
+.priceCard {
+  background-color: rgba(0, 0, 0, 0.295);
+  margin: 2vh;
+  padding: 2vh;
+  display: flex;
+  flex-direction: column;
+  height: 40svh;
+  width: 300px;
+  font-size: 2vh;
+  border-radius: 2vh 2vh 0 0;
+  border: 4px;
+  border-style: none none double none;
 }
 
 @media (max-width: 1024px) {

@@ -11,6 +11,7 @@ import Future from './sections/Future.jsx';
 import Course from './sections/Course.jsx';
 import Curriculum from './sections/Curriculum.jsx';
 import Instructor from './sections/Instructor.jsx';
+import Price from './sections/Price.jsx';
 import Apply from './sections/Apply.jsx';
 import FAQ from './sections/FAQ.jsx';
 import Contact from './sections/Contact.jsx';
@@ -27,6 +28,7 @@ const App = function() {
       <Section content={<Course/>}/>
       <Section content={<Curriculum/>}/>
       <Section content={<Instructor/>}/>
+      <Section content={<Price/>}/>
       <Section content={<Apply/>}/>
       <Section content={<FAQ/>}/>
       <Section content={<Contact/>}/>
