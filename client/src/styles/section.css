@@ -149,21 +149,47 @@ textarea {
 }
 
 @media (max-width: 1024px) {
-  .content {
-    padding: 12vh 4vh;
-    height: unset;
-    max-height: 0svh;
-    min-height: 0svh;
-    transition: min-height 0.5s ease, max-height 0.5s ease, opacity 2s;
-  }
-
   .content.open {
+    padding: 4vh;
     height: unset;
-    min-height: 80svh;
-    max-height: 150svh;
   }
 
-  ul {
-    padding: 2vh;
+  .treeImage,
+  .frameLeft {
+    display: none;
+  }
+
+  .howitworksInfo {
+    width: 100%;
+  }
+
+  .howitworksImage {
+    width: 100%;
+  }
+
+  .instructorCard {
+    flex-direction: column;
+  }
+
+  .instructorImage {
+    width: 80%;
+  }
+
+  .priceSection {
+    text-align: center;
+  }
+
+  .priceInfo {
+    flex-direction: column;
+  }
+
+  .priceCard {
+    height: unset;
+    text-align: left;
+    margin: 2vh;
+  }
+
+  .contactCard {
+    width: 90%;
   }
 }

@@ -6,7 +6,7 @@ const Curriculum = function() {
     <img className='frameLeft' src='/images/frame1.svg'/>
     <h2>How it Works</h2>
     <div className='v c'>
-      <img src='/images/howitworks.svg'/>
+      <img className='howitworksImage' src='/images/howitworks.svg'/>
       <br/>
       <p className='howitworksInfo'>
         <small>

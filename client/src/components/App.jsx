@@ -23,7 +23,7 @@ const App = function() {
   return (
     <div id='app' className='app texture v'>
       <Head/>
-      <ApplyFloat />
+      {!st.isMobile && <ApplyFloat />}
       <Section content={<Future/>}/>
       <Section content={<Course/>}/>
       <Section content={<Curriculum/>}/>

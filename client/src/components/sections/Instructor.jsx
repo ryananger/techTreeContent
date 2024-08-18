@@ -3,7 +3,7 @@ import React from 'react';
 const Instructor = function() {
   return (
     <>
-    <div className='h'>
+    <div className='instructorCard h'>
       <img className='instructorImage' src='/images/ry.svg'/>
       <div className='v c'>
         <h2>Meet your Instructor</h2>
