@@ -85,6 +85,14 @@ section:nth-of-type(3n):has(.content.open) {
   border-style: none none double none;
 }
 
+.howitworksInfo {
+  width: 80%;
+}
+
+.applyInfo {
+  text-align: center;
+}
+
 @media (max-width: 1024px) {
   .content {
     padding: 12vh 4vh;

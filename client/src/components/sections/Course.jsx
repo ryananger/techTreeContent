@@ -28,7 +28,7 @@ const Course = function() {
         </li><br/>
         <li>
           <small><strong>Artificial Intelligence and Machine Learning: </strong>
-          Introduction to AI and its applications. Basics of machine learning and building simple models. Learn how to use ChatGPT and interact with AI through APIs.</small>
+          Introduction to AI and its applications. Learn how to use ChatGPT and interact with AI through APIs.</small>
         </li>
       </ul>
     </div>

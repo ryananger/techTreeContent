@@ -4,7 +4,7 @@ const Instructor = function() {
   return (
     <>
     <div className='h'>
-      <img className='instructorImage'/>
+      <img className='instructorImage' src='/images/ry.svg'/>
       <div className='v c'>
         <h2>Meet your Instructor</h2>
         Hi! I'm Ry, and I am a full-stack software engineer, an artist and musician, and former Air Traffic Controller and ATC Instructor for the United States Air Force.
