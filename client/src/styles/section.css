@@ -120,6 +120,10 @@ form {
   padding: 2vh;
 }
 
+.formError {
+  height: 16px;
+}
+
 .sendButton {
   font-weight: 600;
   align-self: flex-end;

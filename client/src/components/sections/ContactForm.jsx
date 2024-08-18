@@ -1,13 +1,11 @@
-import React, {useState, useRef} from 'react';
-import {IoSend as SendIcon} from "react-icons/io5";
+import React, {useState, useEffect, useRef} from 'react';
 import emailjs from '@emailjs/browser';
-
-import st from 'ryscott-st';
 
 emailjs.init({publicKey: 'x-whDEpbDVF9W3pTh'});
 
 const ContactForm = function() {
   const [sent, setSent] = useState(false);
+  const [formError, setFormError] = useState('');
   const form = useRef();
 
   const handleSubmit = function(e) {
@@ -16,6 +14,7 @@ const ContactForm = function() {
     if (!form.current.user_name.value || 
         !form.current.user_email.value || 
         !form.current.message.value) {
+          setFormError('Form incomplete!');
           return;
         }
 
@@ -39,6 +38,7 @@ const ContactForm = function() {
         <input type='email' name='user_email' placeholder='Email?' required/>
         <textarea name='message' placeholder="What's up?" required/>
         <br/>
+        <small className='formError'>{formError}</small>
         <div className='sendButton' onClick={handleSubmit}>SEND</div>
       </form>
       </>
@@ -47,13 +47,29 @@ const ContactForm = function() {
 
   const renderSent = function() {
     return (
-      <div className='sentBox c'>
+      <small className='sentBox c'>
         <br/>
         Message sent! You will receive a response shortly.
         <br/><br/>
-      </div>
+      </small>
     );
   };
+  
+  useEffect(()=>{
+    if (formError) {
+      setTimeout(()=>{
+        setFormError('');
+      }, 1000);
+    }
+  }, [formError]);
+
+  useEffect(()=>{
+    if (sent) {
+      setTimeout(()=>{
+        setSent('');
+      }, 3000);
+    }
+  }, [sent]);
 
   return (
     <>

@@ -5,7 +5,7 @@ const ApplyFloat = function() {
     <>
     <div className='courseInfo h c'>
       <b>APPLY</b>
-      <small>Limited space available! Enrollment deadline is July 16. The pilot course begins on August 5, 2024.</small>
+      <small>Limited space available! Enrollment deadline is October 14. The pilot course begins on November 11, 2024.</small>
     </div>
     </>
   );
