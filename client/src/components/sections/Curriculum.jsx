@@ -2,7 +2,8 @@ import React from 'react';
 
 const Curriculum = function() {
   return (
-    <>
+    <div className='anchor'>
+    <img className='frameLeft' src='/images/frame1.svg'/>
     <h2>How it Works</h2>
     <div className='v c'>
       <img src='/images/howitworks.svg'/>
@@ -18,7 +19,7 @@ const Curriculum = function() {
         </small>
       </p>
     </div>
-    </>
+    </div>
   );
 };
 

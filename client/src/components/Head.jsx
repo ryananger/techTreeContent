@@ -31,6 +31,7 @@ const Head = function() {
 
   return (
     <header className='anchor v c'>
+      <img className='treeImage' src='/images/tree.svg'/>
       <h1 className={`headTitle ${st.isMobile ? '' : 'float'}`}>techTree Academy</h1>
       <p className={`headTagline ${st.isMobile ? '' : 'float'}`}>Welcome to techTree Academy, where we {opt}</p>
       <small className={`headExtra float`}>no robots were harmed in the creation of this website</small>

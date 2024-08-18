@@ -22,6 +22,11 @@ header {
   left: 55%;
 }
 
+.treeImage {
+  position: absolute;
+  left: 5vw;
+}
+
 @media (max-width: 1024px) {
   .headExtra {
     left: unset;
