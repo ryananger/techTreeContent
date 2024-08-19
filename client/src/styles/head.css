@@ -25,6 +25,7 @@ header {
 .treeImage {
   position: absolute;
   left: 5vw;
+  max-height: 80%;
 }
 
 @media (max-width: 1024px) {
