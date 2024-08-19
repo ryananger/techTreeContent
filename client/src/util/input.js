@@ -26,16 +26,6 @@ window.addEventListener('keypress', function(e) {
 
   switch (e.key) {
     case 'm':
-      st.mountBoard();
-      break;
-    case '3':
-      st.mountBoard(3);
-      break;
-    case '4':
-      st.mountBoard(4);
-      break;
-    case '5':
-      st.mountBoard(5);
       break;
   }
 });
