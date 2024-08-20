@@ -9,7 +9,8 @@ import Forums from './Forums.jsx';
 import Login from './Login.jsx';
 import ViewBoard from './ViewBoard.jsx';
 
-import {auth} from 'util';
+import {helpers, auth} from 'util';
+import { ax } from 'util';
 
 const isMobile = st.isMobile = window.innerWidth < 1024;
 
@@ -39,7 +40,15 @@ const App = function() {
     }
   };
 
-  useEffect(()=>{
+  var handleUser = function() {
+    const cookie = helpers.cookieParse(document.cookie);
+    
+    if (cookie.user) {
+      ax.getUser(cookie.user);
+    }
+  };
+
+  var handleRoute = function() {
     if (route && route.includes('board-')) {
       setView('viewBoard');
       setBoard(route.slice(6));
@@ -56,7 +65,10 @@ const App = function() {
     if (route && !views[route]) {
       setView('unfound');
     }
-  }, []);
+  };
+
+  useEffect(handleRoute, []);
+  useEffect(handleUser, []);
 
   return (
     <div id='app' className='app texture v'>

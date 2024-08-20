@@ -25,6 +25,7 @@ const userSchema = new mongoose.Schema({
 const boardSchema = new mongoose.Schema({
   name: String,
   posts: [Object],
+  latest: Object,
   postCount: Number
 });
 
@@ -32,6 +33,7 @@ const postSchema = new mongoose.Schema({
   author:  String,
   isReply: Boolean,
   text:    String,
+  latest:  Object,
 
   createdOn: {type: Date, default: Date.now}
 });
