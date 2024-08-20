@@ -9,6 +9,8 @@ import Forums from './Forums.jsx';
 import Login from './Login.jsx';
 import ViewBoard from './ViewBoard.jsx';
 
+import {auth} from 'util';
+
 const isMobile = st.isMobile = window.innerWidth < 1024;
 
 const route = window.location.pathname.slice(1);
@@ -25,6 +27,16 @@ const App = function() {
     forums:  <Forums/>,
     viewBoard: <ViewBoard/>,
     unfound: '404'
+  };
+
+  var handleLogin = function() {
+    if (!user) {
+      setLogin(true);
+    } else {
+      auth.logOut();
+      st.setUser(null);
+      document.cookie = 'user=';
+    }
   };
 
   useEffect(()=>{
@@ -50,7 +62,7 @@ const App = function() {
     <div id='app' className='app texture v'>
       <div className='header h'>
         <a className='forumsTitle' href='/forums'>techTree Academy Forums</a>
-        <div id='loginButton' onClick={()=>{setLogin(true)}}>{!user ? 'login' : 'logout'}</div>
+        <div id='loginButton' onClick={handleLogin}>{!user ? 'login' : 'logout'}</div>
       </div>
       <div className='forums v'>
         {login && <Login/>}

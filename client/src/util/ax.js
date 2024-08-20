@@ -5,7 +5,7 @@ var ax = {
   createUser: function(user) {
     axios.post(process.env.URL + 'api/users', user)
       .then(function(response) {
-        console.log(response);
+        console.log(response.data);
       })
   },
   getUser: function(uid) {
@@ -14,6 +14,7 @@ var ax = {
         var user = response.data;
 
         st.setUser(user);
+        st.setLogin(false);
         document.cookie = `user=${uid}`;
       })
   },

@@ -7,6 +7,12 @@ var controller = {
       .then(function(user) {
         res.json(user);
       })
+  },
+  getUser: function(req, res) {
+    User.findOne({uid: req.params.uid})
+      .then(function(user) {
+        res.json(user);
+      })
   }
 };
 

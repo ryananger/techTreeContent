@@ -34,6 +34,7 @@ app.use(express.static(dist));
 app.use(router);
 
 app.post('/api/users', controller.createUser);
+app.get('/api/users/:uid', controller.getUser);
 
 const PORT = 4001;
 
