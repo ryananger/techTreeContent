@@ -60,24 +60,6 @@
   bottom: 5%;
 }
 
-input, textarea {
-  outline: none;
-  border: none;
-  background: var(--grass);
-  margin: 8px;
-  padding: 1vh;
-  border-radius: 6px;
-  width: 80%;
-  font-family: Jost;
-}
-
-textarea {
-  min-height: 120px;
-  max-height: 240px;
-  min-width: 80%;
-  max-width: 80%;
-}
-
 @media (max-width: 1024px) {
 
 }

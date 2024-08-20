@@ -145,6 +145,21 @@ div {
   background-color: var(--grass);
 }
 
+input, textarea {
+  outline: none;
+  border: none;
+  background: var(--grass);
+  font-family: Jost;
+}
+
+textarea {
+  min-height: 120px;
+  max-height: 240px;
+  min-width: 80%;
+  max-width: 80%;
+}
+
+
 /* SCROLLBAR */
 
 ::-webkit-scrollbar {
@@ -161,37 +176,46 @@ div {
 
 /**/
 
-.courseInfo {
+#loginButton {
+  cursor: pointer;
+}
+
+.auth {
+  width: 100vw;
+  height: 100vh;
   position: fixed;
+  left: 0;
   top: 0;
-  text-align: right;
-  width: calc(100% - 6px);
+  z-index: 10;
+  background-color: rgba(0, 0, 0, 0.479);
+}
+
+#loginForm {
   background-color: var(--bg);
-  box-sizing: border-box;
+  padding: 2vh;
+  border-radius: 2vh;
+  box-shadow: 0 0 48px 8px black;
+  font-size: 18px;
+}
+
+.formInput,
+.formSubmit {
+  width: 240px;
   height: 36px;
-  padding: 1vh;
-  font-size: 16px;
-  cursor: pointer;
-}
-
-.applyButton {
-  background-color: var(--grass);
-  border: none;
-  text-align: center;
-  text-decoration: none;
-  font-size: 2.4vh;
-  font-weight: 600;
-  margin: 2vh;
-  cursor: pointer;
-  border-radius: 4px;
-  color: var(--bg);
-  transition: font-size 0.1s;
-  height: 6vh;
-  width: unset;
-  aspect-ratio: 4;
   box-sizing: border-box;
+  margin: 1vh;
+  padding: 1vh;
+  border-radius: 6px;
 }
 
-.applyButton:hover {
-  font-size: 2.8vh;
+.formHead,
+.formSubmit,
+.signUpText {
+  margin-bottom: 2vh;
+}
+
+.signUpText,
+.formSubmit,
+.backButton {
+  cursor: pointer;
 }
