@@ -1,11 +1,11 @@
 import React, {useState, useEffect} from 'react';
 
-import '../styles/head.css';
+import '../styles/landing.css';
 import st from 'ryscott-st';
 
 var count = 0;
 
-const Head = function() {
+const Landing = function() {
   const [opt, setOpt] = useState(taglines[0]);
 
   var switchOption = function() {
@@ -32,9 +32,10 @@ const Head = function() {
   return (
     <header className='anchor v c'>
       <img className='treeImage' src='/images/tree.svg'/>
-      <h1 className={`headTitle ${st.isMobile ? '' : 'float'}`}>techTree Academy</h1>
-      <p className={`headTagline ${st.isMobile ? '' : 'float'}`}>Welcome to techTree Academy, where we {opt}</p>
-      <small className={`headExtra float`}>no robots were harmed in the creation of this website</small>
+      <h1 className={`landingTitle ${st.isMobile ? '' : 'float'}`}>techTree Academy Forums</h1>
+      <p className={`landingTagline ${st.isMobile ? '' : 'float'}`}>Welcome to techTree Academy, where we {opt}</p>
+      <a className='enterButton float' href='forums'>ENTER</a>
+      <small className={`landingExtra float`}>no robots were harmed in the creation of this website</small>
     </header>
   );
 };
@@ -88,4 +89,4 @@ const taglines = [
 ];
 
 
-export default Head;
+export default Landing;

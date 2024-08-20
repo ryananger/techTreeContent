@@ -1,0 +1,54 @@
+.forums {
+  height: 100svh;
+  width: 100svw; 
+  padding: 2vh;
+  justify-content: start;
+}
+
+.header {
+  width: 100%;
+  justify-content: space-between;
+}
+
+.boards {
+  width: 80%;
+}
+
+.board {
+  background-color: rgba(0, 0, 0, 0.295);
+  margin: 2vh;
+  padding: 2vh;
+  justify-content: space-between;
+  min-height: 120px;
+  width: 100%;
+  font-size: 2vh;
+  border-radius: 2vh 2vh 0 0;
+  border: 4px;
+  border-style: none none double none;
+}
+
+.boardInfo {
+  align-items: start;
+}
+
+input, textarea {
+  outline: none;
+  border: none;
+  background: var(--grass);
+  margin: 8px;
+  padding: 1vh;
+  border-radius: 6px;
+  width: 80%;
+  font-family: Jost;
+}
+
+textarea {
+  min-height: 120px;
+  max-height: 240px;
+  min-width: 80%;
+  max-width: 80%;
+}
+
+@media (max-width: 1024px) {
+
+}
