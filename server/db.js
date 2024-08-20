@@ -10,13 +10,9 @@ mongoose.connect(url, options, function(a) {
 const userSchema = new mongoose.Schema({
   uid:       String, // from firebase auth
   username:  String,
-  firstName: String,
-  lastName:  String,
+  email:     String,
 
   createdOn: {type: Date, default: Date.now},
-
-  email:     String,
-  phone:     String,
 
   settings: Object,
 

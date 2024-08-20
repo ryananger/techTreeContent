@@ -23,6 +23,8 @@ const Login = function() {
         password: form.pass.value
       };
 
+      console.log(user);
+      
       auth.signUp(user);
     } else {
       auth.signIn(form.email.value, form.pass.value);

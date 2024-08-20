@@ -5,7 +5,7 @@ var ax = {
   createUser: function(user) {
     axios.post(process.env.URL + 'api/users', user)
       .then(function(response) {
-        // do something
+        console.log(response);
       })
   },
   getUser: function(uid) {

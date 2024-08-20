@@ -8,7 +8,7 @@ const app    = express();
 const dotenv = require('dotenv');
 dotenv.config();
 
-// const controller = require('./controller.js');
+const controller = require('./controller.js');
 
 const dist = path.join(__dirname, '../client/dist');
 
@@ -33,7 +33,7 @@ app.use(express.urlencoded({extended: true}));
 app.use(express.static(dist));
 app.use(router);
 
-// app.post('/api/users', controller.createUser);
+app.post('/api/users', controller.createUser);
 
 const PORT = 4001;
 
