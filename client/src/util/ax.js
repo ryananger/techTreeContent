@@ -18,6 +18,17 @@ var ax = {
         document.cookie = `user=${uid}`;
       })
   },
+  getBoard: async function(name) {
+    try {
+      const response = await axios.get(process.env.URL + 'api/boards/' + name);
+
+      return response.data;
+    } catch (error) {
+      console.error("Error fetching board data:", error);
+
+      throw error;
+    }
+  }
 };
 
 export default ax;

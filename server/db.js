@@ -26,12 +26,12 @@ const boardSchema = new mongoose.Schema({
   name: String,
   posts: [Object],
   latest: Object,
-  postCount: Number
+  postCount: {type: Number, default: 0}
 });
 
 const postSchema = new mongoose.Schema({
   author:  String,
-  isReply: Boolean,
+  isReply: {type: Boolean, default: false},
   text:    String,
   latest:  Object,
 

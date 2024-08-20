@@ -3,15 +3,27 @@ import React, {useState, useEffect} from 'react';
 import '../styles/forums.css';
 import st from 'ryscott-st';
 
-const Board = function({title, info, postCount}) {
+import {ax} from 'util';
+
+const Board = function({name, info}) {
+  const [postCount, setPostCount] = useState(0);
+
+  var getBoard = async function() {
+    var board = await ax.getBoard(name);
+
+    if (board) {
+      setPostCount(board.postCount);
+    }
+  };
+
   useEffect(()=>{
-    //get board info from db
+    getBoard();
   }, []);
 
   return (
-    <a className='board h' href={'/board-' + title}>
+    <a className='board h' href={'/board-' + name}>
       <div className='boardInfo v'>
-        <h3>{title}</h3>
+        <h3>{name}</h3>
         <small>{info}</small>
       </div>
       <div className='boardStats h'>

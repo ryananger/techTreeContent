@@ -74,7 +74,7 @@ const App = function() {
     <div id='app' className='app texture v'>
       <div className='header h'>
         <a className='forumsTitle' href='/forums'>techTree Academy Forums</a>
-        <div id='loginButton' onClick={handleLogin}>{!user ? 'login' : 'logout'}</div>
+        {route && <div id='loginButton' onClick={handleLogin}>{!user ? 'login' : 'logout'}</div>}
       </div>
       <div className='forums v'>
         {login && <Login/>}
