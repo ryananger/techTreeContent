@@ -1,5 +1,5 @@
 const axios    = require('axios');
-const { User, Board } = require('./db.js');
+const { User, Board, Post } = require('./db.js');
 
 var controller = {
   createUser: function(req, res) {
@@ -19,6 +19,21 @@ var controller = {
       .then(function(board) {
         res.json(board);
       })
+  },
+  getPosts: function(req, res) {
+
+  },
+  createPost: async function(req, res) {
+    var post = req.body;
+    var board = await Board.findOne({name: req.body.board});
+
+    post.board = board._id;
+    post = await Post.create(post);
+    
+    board.posts.unshift(post._id);
+    await Board.updateOne({name: board.name}, board);
+
+    res.sendStatus(200);
   }
 };
 

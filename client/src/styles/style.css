@@ -188,7 +188,8 @@ input, textarea {
 
 .createPostButton:hover,
 .backButton:hover,
-#loginButton:hover {
+#loginButton:hover,
+.sendButton:hover {
   color: var(--hover);
   cursor: pointer;
 }
@@ -229,7 +230,12 @@ input, textarea {
 }
 
 .signUpText,
-.formSubmit,
-.backButton {
+.formSubmit {
   cursor: pointer;
+}
+
+.createButtons {
+  width: 100%;
+  justify-content: space-between;
+  padding: 1vh;
 }

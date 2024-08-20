@@ -24,17 +24,18 @@ const userSchema = new mongoose.Schema({
 
 const boardSchema = new mongoose.Schema({
   name: String,
-  posts: [Object],
+  posts: [{type: mongoose.Schema.Types.ObjectId, ref: 'Post'}],
   latest: Object,
-  postCount: {type: Number, default: 0}
+  postCount: { type: Number, default: 0 }
 });
 
+// Post Schema
 const postSchema = new mongoose.Schema({
-  author:  String,
-  isReply: {type: Boolean, default: false},
-  text:    String,
-  latest:  Object,
-
+  author: String,
+  board: {type: mongoose.Schema.Types.ObjectId, ref: 'Board'},
+  parent: {type: mongoose.Schema.Types.ObjectId, ref: 'Post'},
+  text: String,
+  latest: Object,
   createdOn: {type: Date, default: Date.now}
 });
 

@@ -36,6 +36,9 @@ app.use(router);
 app.post('/api/users', controller.createUser);
 app.get('/api/users/:uid', controller.getUser);
 app.get('/api/boards/:name', controller.getBoard);
+app.get('/api/boards/:name/posts', controller.getPosts);
+app.post('/api/posts/', controller.createPost);
+
 
 const PORT = 4001;
 

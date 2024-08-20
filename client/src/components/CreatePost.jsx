@@ -7,20 +7,31 @@ const CreatePost = function() {
   var handleSubmit = function(e) {
     e.preventDefault();
 
-    var form = e.target;
+    var form = document.getElementById('createForm');
 
-    //createPost in db
+    if (form.text.value) {
+      var post = {
+        author: st.user.username,
+        text: form.text.value,
+        board: st.board
+      };
+
+      ax.createPost(post);
+    }
   };
 
   var renderForm = function() {
     return (
       <form id='createForm' className='createForm v' onSubmit={handleSubmit} autoComplete='off'>
         <div className='formBody v'>
-          <textarea className='createInput' name='createPost' autoComplete='off' type='text'/>
+          <textarea className='createInput' name='text' autoComplete='off' type='text'/>
         </div>
 
-        <div className='backButton' onClick={()=>{st.setCreatePost(false)}}>
-          back
+        <div className='createButtons h'>
+          <div className='backButton' onClick={()=>{st.setCreatePost(false)}}>
+            back
+          </div>
+          <div className='sendButton' onClick={handleSubmit}>send</div>
         </div>
       </form>
     )

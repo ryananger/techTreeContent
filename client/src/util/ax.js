@@ -28,6 +28,20 @@ var ax = {
 
       throw error;
     }
+  },
+  getPosts: async function() {
+
+  },
+  createPost: async function(post) {
+    console.log(post);
+    
+    try {
+      const response = await axios.post(process.env.URL + 'api/posts/', post);
+
+      return response.data;
+    } catch (error) {
+      throw error;
+    }
   }
 };
 
