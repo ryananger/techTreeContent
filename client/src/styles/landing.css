@@ -25,7 +25,7 @@ header {
 .enterButton {
   top: 55%;
   background-color: var(--grass);
-  color: var(--bg);
+  color: var(--bg) !important;
   padding: 1vh 2vh;
   border-radius: 6px;
   cursor: pointer;

@@ -55,6 +55,13 @@ h1, h2, h3 {
   margin: 0;
 }
 
+a,
+a:hover,
+a:visited {
+  color: unset;
+  text-decoration: none;
+}
+
 p {
   padding: 2vh;
   margin: 0;
@@ -124,6 +131,13 @@ div {
 }
 
 /* */
+
+.header {
+  width: 100%;
+  position: fixed;
+  justify-content: space-between;
+  padding: 1vh;
+}
 
 .foot {
   width: 100%;

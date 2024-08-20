@@ -5,30 +5,41 @@
   justify-content: start;
 }
 
-.header {
-  width: 100%;
-  justify-content: space-between;
-}
-
-.boards {
-  width: 80%;
+.boards,
+.posts {
+  height: 100%;
+  width: 60%;
 }
 
 .board {
   background-color: rgba(0, 0, 0, 0.295);
-  margin: 2vh;
+  margin: 1vh;
   padding: 2vh;
   justify-content: space-between;
-  min-height: 120px;
+  min-height: 90px;
   width: 100%;
   font-size: 2vh;
   border-radius: 2vh 2vh 0 0;
   border: 4px;
   border-style: none none double none;
+  z-index: 1;
 }
 
 .boardInfo {
   align-items: start;
+}
+
+.frameLeft {
+  position: absolute;
+  left: -25%;
+  top: 5%;
+}
+
+.frameRight {
+  position: absolute;
+  transform: rotate(180deg);
+  right: -25%;
+  bottom: 5%;
 }
 
 input, textarea {
