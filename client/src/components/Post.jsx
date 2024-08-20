@@ -3,24 +3,24 @@ import React, {useState, useEffect} from 'react';
 import '../styles/forums.css';
 import st from 'ryscott-st';
 
-const Board = function({title, info, postCount}) {
+const Post = function({title, replyCount}) {
   useEffect(()=>{
-    //get board info from db
+    //get Post info from db
   }, []);
 
   return (
-    <a className='board h' href={'/board-' + title.toLowerCase()}>
-      <div className='boardInfo v'>
+    <a className='post h' href={'/post-'}>
+      <div className='postInfo v'>
         <h3>{title}</h3>
-        <small>{info}</small>
+        <small>post user</small>
       </div>
-      <div className='boardStats h'>
+      <div className='postStats h'>
         <div>
-          {postCount} posts
+          {replyCount} replies
         </div>
       </div>
     </a>
   );
 };
 
-export default Board;
+export default Post;

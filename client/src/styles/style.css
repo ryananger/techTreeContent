@@ -134,7 +134,6 @@ div {
 
 .header {
   width: 100%;
-  position: fixed;
   justify-content: space-between;
   padding: 1vh;
 }

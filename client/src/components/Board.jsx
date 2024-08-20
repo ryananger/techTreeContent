@@ -9,7 +9,7 @@ const Board = function({title, info, postCount}) {
   }, []);
 
   return (
-    <a className='board h' href={'/board-' + title.toLowerCase()}>
+    <a className='board h' href={'/board-' + title}>
       <div className='boardInfo v'>
         <h3>{title}</h3>
         <small>{info}</small>
