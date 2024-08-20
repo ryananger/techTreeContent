@@ -18,42 +18,36 @@ const userSchema = new mongoose.Schema({
   email:     String,
   phone:     String,
 
-  community: String,
   settings: Object,
 
   notifications: [Object],
-  friends: [String],
-  interactions: [Object],
-  messages: [Object],
   posts:    [Object],
-  events:   [Object]
+  replies:  [Object],
+  messages: [Object]
 });
 
-const communitySchema = new mongoose.Schema({
-  name:     String,
-  settings: Object,
-  private:  Boolean,
+const boardSchema = new mongoose.Schema({
+  name: String,
+  posts: [Object],
+  postCount: Number
+});
 
-  notifications: [Object],
-  members:  [{admin: Boolean, uid: String}],
-  messages: [Object],
-  feeds: {
-    home:  [Object],
-    learn: [Object],
-    grow:  [Object],
-    work:  [Object],
-    play:  [Object],
-    help:  [Object]
-  },
-  events:  [Object]
+const postSchema = new mongoose.Schema({
+  author:  String,
+  isReply: Boolean,
+  text:    String,
+
+  createdOn: {type: Date, default: Date.now}
 });
 
 const User = new mongoose.model('User', userSchema);
-const Community = new mongoose.model('Community', communitySchema);
+const Board = new mongoose.model('Board', boardSchema);
+const Post = new mongoose.model('Post', postSchema);
 
 var models = {
   User: User,
-  Community: Community
+  Board: Board,
+  Post: Post
 };
 
 module.exports = models;
