@@ -86,7 +86,8 @@ const App = function() {
   useEffect(handleUser, []);
 
   return (
-    <div id='app' className='app texture v'>
+    <div id='app' className='appv'>
+      <div className='texture'/>
       <div className='header h anchor'>
         <a className='forumsTitle' href='/forums'>techTree Academy Forums</a>
         {route && <IoMenu className='menuButton' onClick={()=>{setMenuOpen(!menuOpen)}}/>}

@@ -52,7 +52,7 @@ const ViewPost = function() {
       </div>
       <Post post={post}/>
       {renderReplies()}
-      {st.user && <CreateReply/>}
+      {post && st.user && <CreateReply/>}
       <div className='boardSpacer'/>
     </div>
   );

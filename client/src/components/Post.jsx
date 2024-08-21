@@ -6,15 +6,23 @@ import st from 'ryscott-st';
 import {ax, helpers} from 'util';
 
 const Post = function({post}) {
+  const [confirmDelete, setConfirmDelete] = useState(false);
+
   var renderPostInteract = function() {
     if (post?.author === st.user?.username) {
       return (
         <div className='postInteract v'>
           {/* <small>edit</small> */}
-          <small>delete</small>
+          <small onClick={()=>{setConfirmDelete(true)}}>delete</small>
         </div>
       )
     }
+  };
+
+  var handleDelete = async function() {
+    await ax.deletePost(post._id);
+    setConfirmDelete(false);
+    window.location.href = process.env.URL + 'board-' + post.board.name;
   };
 
   return (
@@ -27,6 +35,17 @@ const Post = function({post}) {
         {post?.text}
       </div>
       {renderPostInteract()}
+      {confirmDelete && 
+        <div className='deleteModal v'>
+          <div className='deleteContainer v c'>
+            <div>are you sure?</div>
+            <div className='h'>
+              <div className='deleteButton' onClick={handleDelete}>yes</div>
+              <div className='deleteButton' onClick={()=>{setConfirmDelete(false)}}>no</div>
+            </div>
+          </div>
+        </div>
+      }
     </div>
   );
 };

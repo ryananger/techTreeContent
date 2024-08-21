@@ -56,6 +56,19 @@ var controller = {
     var post = await Post.findOne({_id: req.params.post}).populate('board replies');
 
     res.json(post);
+  },
+  deletePost: async function(req, res) {
+    await Post.deleteOne({_id: req.params.post});
+
+    //reduce board post count, delete all replies
+    res.sendStatus(201);
+  },
+  deleteReply: async function(req, res) {
+    await Reply.deleteOne({_id: req.params.reply});
+
+    //reduce post reply count
+
+    res.sendStatus(201);
   }
 };
 

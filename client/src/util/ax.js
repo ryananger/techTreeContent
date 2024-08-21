@@ -62,6 +62,24 @@ var ax = {
     } catch (error) {
       throw error;
     }
+  },
+  deletePost: async function(post) {
+    try {
+      const response = await axios.put(process.env.URL + 'api/posts/' + post);
+
+      return response.data;
+    } catch (error) {
+      throw error;
+    }
+  },
+  deleteReply: async function(reply) {
+    try {
+      const response = await axios.put(process.env.URL + 'api/replies/' + reply);
+
+      return response.data;
+    } catch (error) {
+      throw error;
+    }
   }
 };
 
