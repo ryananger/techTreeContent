@@ -45,6 +45,15 @@ var ax = {
       throw error;
     }
   },
+  createReply: async function(reply) {
+    try {
+      const response = await axios.post(process.env.URL + 'api/replies/', reply);
+
+      return response.data;
+    } catch (error) {
+      throw error;
+    }
+  },
   getPost: async function(post) {
     try {
       const response = await axios.get(process.env.URL + 'api/posts/' + post);

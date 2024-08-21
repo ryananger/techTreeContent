@@ -5,7 +5,7 @@ import '../styles/forums.css';
 import st from 'ryscott-st';
 import {ax} from 'util';
 
-import Post from './Post.jsx';
+import PostCard from './PostCard.jsx';
 import CreatePost from './CreatePost.jsx';
 
 const ViewBoard = function() {
@@ -16,7 +16,7 @@ const ViewBoard = function() {
     var rendered = [];
 
     for (var i = 0; i < posts.length; i++) {
-      rendered.unshift(<Post key={'post' + i} post={posts[i]}/>);
+      rendered.unshift(<PostCard key={'post' + i} post={posts[i]}/>);
     }
 
     return rendered;

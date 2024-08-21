@@ -1,5 +1,5 @@
 const axios    = require('axios');
-const { User, Board, Post } = require('./db.js');
+const {User, Board, Post, Reply} = require('./db.js');
 
 var controller = {
   createUser: function(req, res) {
@@ -37,6 +37,20 @@ var controller = {
     await Board.updateOne({name: board.name}, board);
 
     res.json(post._id);
+  },
+  createReply: async function(req, res) {
+    var reply = req.body;
+    var post = await Post.findOne({_id: req.body.parent});
+
+    reply = await Reply.create(reply);
+
+    post.replies.push(reply._id);
+    post.replyCount += 1;
+    post.latest = {author: reply.author, createdOn: reply.createdOn};
+    
+    await Post.updateOne({_id: post._id}, post);
+
+    res.json(reply);
   },
   getPost: async function(req, res) {
     var post = await Post.findOne({_id: req.params.post}).populate('board replies');

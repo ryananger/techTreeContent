@@ -26,7 +26,7 @@ const boardSchema = new mongoose.Schema({
   name: String,
   posts: [{type: mongoose.Schema.Types.ObjectId, ref: 'Post'}],
   latest: Object,
-  postCount: { type: Number, default: 0 }
+  postCount: {type: Number, default: 0}
 });
 
 // Post Schema
@@ -34,10 +34,10 @@ const postSchema = new mongoose.Schema({
   author: String,
   title: String,
   board: {type: mongoose.Schema.Types.ObjectId, ref: 'Board'},
-  replies: {type: mongoose.Schema.Types.ObjectId, ref: 'Reply'},
+  replies: [{type: mongoose.Schema.Types.ObjectId, ref: 'Reply'}],
   text: String,
   latest: Object,
-  replyCount: Number,
+  replyCount: {type: Number, default: 0},
   createdOn: {type: Date, default: Date.now}
 });
 

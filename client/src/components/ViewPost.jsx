@@ -5,9 +5,11 @@ import '../styles/forums.css';
 import st from 'ryscott-st';
 import {ax, helpers} from 'util';
 
+import CreateReply from './CreateReply.jsx';
+
 const ViewPost = function() {
   const [post, setPost] = useState(null);
-  const [replies, setReplies] = useState(null);
+  const [replies, setReplies] = useState([]);
 
   var getPost = async function() {
     var result = await ax.getPost(st.post_id);
@@ -17,6 +19,28 @@ const ViewPost = function() {
     if (result.replies) {
       setReplies(result.replies);
     }
+  };
+
+  var renderReplies = function() {
+    var rendered = [];
+
+    for (var i = 0; i < replies.length; i++) {
+      const reply = replies[i];
+
+      rendered.push(
+        <div key={'reply' + i} className='reply h'>
+          <div className='replyInfo v'>
+            <h3>{reply?.author}</h3>
+            <small>{helpers.formatZuluDate(reply?.createdOn)}</small>
+          </div>
+          <div className='replyText h'>
+            {reply?.text}
+          </div>
+        </div>
+      )
+    }
+
+    return rendered;
   };
 
   useEffect(()=>{
@@ -41,6 +65,8 @@ const ViewPost = function() {
           {post?.text}
         </div>
       </div>
+      {renderReplies()}
+      <CreateReply/>
       <div className='boardSpacer'/>
     </div>
   );

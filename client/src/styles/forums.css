@@ -22,7 +22,8 @@
 }
 
 .board,
-.post {
+.post,
+.reply {
   background-color: rgba(0, 0, 0, 0.295);
   margin: 1vh;
   padding: 2vh;
@@ -36,23 +37,62 @@
   z-index: 1;
 }
 
+.reply {
+  border-radius: 1vh;
+  border: none;
+}
+
 .boardInfo,
-.postInfo {
+.postInfo,
+.replyInfo {
   align-items: start;
 }
 
-.postInfo {
+.postInfo,
+.replyInfo {
   width: 160px;
+  height: 100%;
   flex: none;
   border-right: 1px solid;
+  justify-content: start;
 }
 
-.postText {
+.postText,
+.replyText {
   width: 100%;
   height: 100%;
   padding: 0 2vh;
   align-items: start;
   justify-content: start;
+  white-space: pre-wrap;
+}
+
+.replyContainer {
+  width: 100%;
+  align-items: end;
+  margin: 1vh;
+}
+
+.replyInput {
+  width: 100%;
+  min-width: 100%;
+  max-width: 100%;
+  border-radius: 6px;
+  height: 120px;
+  max-height: 120px;
+  min-height: 60px;
+  border: none;
+  padding: 2vh;
+  box-sizing: border-box;
+}
+
+.replySend {
+  margin: 1vh 0;
+}
+
+.replySend:hover {
+  cursor: pointer;
+  color: var(--hover);
 }
 
 .boardHeader {

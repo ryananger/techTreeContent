@@ -3,6 +3,8 @@ import React, {useState, useEffect} from 'react';
 import '../styles/forums.css';
 import st from 'ryscott-st';
 
+import {helpers} from 'util';
+
 const Post = function({post}) {
   return (
     <a className='post h' href={'/post-' + post._id}>
@@ -11,8 +13,9 @@ const Post = function({post}) {
         <small>{post.author}</small>
       </div>
       <div className='postStats h'>
-        <div>
+        <div className='v' style={{alignItems: 'end'}}>
           {post.replyCount} replies
+          <small>{post.latest.author} at {helpers.formatZuluDate(post.latest.createdOn)}</small>
         </div>
       </div>
     </a>

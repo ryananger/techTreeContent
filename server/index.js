@@ -38,6 +38,7 @@ app.get('/api/users/:uid', controller.getUser);
 app.get('/api/boards/:name', controller.getBoard);
 app.get('/api/boards/posts/:name', controller.getPosts);
 app.post('/api/posts/', controller.createPost);
+app.post('/api/replies/', controller.createReply);
 app.get('/api/posts/:post', controller.getPost);
 
 

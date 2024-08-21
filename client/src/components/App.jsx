@@ -15,7 +15,7 @@ import {ax} from 'util';
 
 const isMobile = st.isMobile = window.innerWidth < 1024;
 
-const route = window.location.pathname.slice(1);
+const route = st.route = window.location.pathname.slice(1);
 
 const App = function() {
   const [user, setUser] = st.newState('user', useState(null));
