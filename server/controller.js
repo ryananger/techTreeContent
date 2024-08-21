@@ -20,8 +20,10 @@ var controller = {
         res.json(board);
       })
   },
-  getPosts: function(req, res) {
+  getPosts: async function(req, res) {
+    var board = await Board.findOne({name: req.params.name}).populate('posts');
 
+    res.json(board.posts);
   },
   createPost: async function(req, res) {
     var post = req.body;
@@ -29,11 +31,17 @@ var controller = {
 
     post.board = board._id;
     post = await Post.create(post);
-    
+
     board.posts.unshift(post._id);
+    board.postCount += 1;
     await Board.updateOne({name: board.name}, board);
 
-    res.sendStatus(200);
+    res.json(post._id);
+  },
+  getPost: async function(req, res) {
+    var post = await Post.findOne({_id: req.params.post}).populate('board replies');
+
+    res.json(post);
   }
 };
 

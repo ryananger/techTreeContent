@@ -3,20 +3,16 @@ import React, {useState, useEffect} from 'react';
 import '../styles/forums.css';
 import st from 'ryscott-st';
 
-const Post = function({title, replyCount}) {
-  useEffect(()=>{
-    //get Post info from db
-  }, []);
-
+const Post = function({post}) {
   return (
-    <a className='post h' href={'/post-'}>
+    <a className='post h' href={'/post-' + post._id}>
       <div className='postInfo v'>
-        <h3>{title}</h3>
-        <small>post user</small>
+        <h3>{post.title}</h3>
+        <small>{post.author}</small>
       </div>
       <div className='postStats h'>
         <div>
-          {replyCount} replies
+          {post.replyCount} replies
         </div>
       </div>
     </a>

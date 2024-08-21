@@ -3,18 +3,40 @@ import { IoMenu } from "react-icons/io5";
 
 import '../styles/forums.css';
 import st from 'ryscott-st';
+import {ax} from 'util';
 
 import Post from './Post.jsx';
 import CreatePost from './CreatePost.jsx';
 
 const ViewBoard = function() {
   const [createPost, setCreatePost] = st.newState('createPost', useState(false));
+  const [posts, setPosts] = useState([]);
+
+  var renderPosts = function() {
+    var rendered = [];
+
+    for (var i = 0; i < posts.length; i++) {
+      rendered.unshift(<Post key={'post' + i} post={posts[i]}/>);
+    }
+
+    return rendered;
+  };
 
   var handleCreateClick = function() {
     if (!createPost) {
       setCreatePost(true);
     }
   };
+
+  var getPosts = async function() {
+    var results = await ax.getPosts(st.board);
+
+    setPosts(results);
+  };
+
+  useEffect(()=>{
+    getPosts();
+  }, []);
 
   return (
     <div className='posts v c anchor'>
@@ -27,6 +49,7 @@ const ViewBoard = function() {
         {st.user && <div className='createPostButton' onClick={handleCreateClick}>create post</div>}
       </div>
       {createPost && <CreatePost/>}
+      {renderPosts()}
       <div className='boardSpacer'/>
     </div>
   );

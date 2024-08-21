@@ -32,21 +32,32 @@ const boardSchema = new mongoose.Schema({
 // Post Schema
 const postSchema = new mongoose.Schema({
   author: String,
+  title: String,
   board: {type: mongoose.Schema.Types.ObjectId, ref: 'Board'},
-  parent: {type: mongoose.Schema.Types.ObjectId, ref: 'Post'},
+  replies: {type: mongoose.Schema.Types.ObjectId, ref: 'Reply'},
   text: String,
   latest: Object,
+  replyCount: Number,
+  createdOn: {type: Date, default: Date.now}
+});
+
+const replySchema = new mongoose.Schema({
+  author: String,
+  parent: {type: mongoose.Schema.Types.ObjectId, ref: 'Post'},
+  text: String,
   createdOn: {type: Date, default: Date.now}
 });
 
 const User = new mongoose.model('User', userSchema);
 const Board = new mongoose.model('Board', boardSchema);
 const Post = new mongoose.model('Post', postSchema);
+const Reply = new mongoose.model('Reply', replySchema);
 
 var models = {
   User: User,
   Board: Board,
-  Post: Post
+  Post: Post,
+  Reply: Reply
 };
 
 module.exports = models;

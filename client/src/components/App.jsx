@@ -7,10 +7,11 @@ import st from 'ryscott-st';
 import Landing from './Landing.jsx';
 import Forums from './Forums.jsx';
 import Login from './Login.jsx';
+import ViewPost from './ViewPost.jsx';
 import ViewBoard from './ViewBoard.jsx';
 
 import {helpers, auth} from 'util';
-import { ax } from 'util';
+import {ax} from 'util';
 
 const isMobile = st.isMobile = window.innerWidth < 1024;
 
@@ -21,12 +22,13 @@ const App = function() {
   const [login, setLogin] = st.newState('login', useState(false));
   const [view, setView] = st.newState('view', useState(!route ? 'landing' : route));
   const [board, setBoard] = st.newState('board', useState(null));
-  const [post, setPost] = st.newState('post', useState(null));
+  const [post_id, setPost_id] = st.newState('post_id', useState(null));
 
   const views = {
     landing: <Landing/>,
     forums:  <Forums/>,
     viewBoard: <ViewBoard/>,
+    viewPost: <ViewPost/>,
     unfound: '404'
   };
 
@@ -55,11 +57,11 @@ const App = function() {
       return;
     } else if (route && route.includes('post-')) {
       setView('viewPost');
-      setPost(route.slice(5));
+      setPost_id(route.slice(5));
       return;
     } else {
       setBoard(null);
-      setPost(null);
+      setPost_id(null);
     }
 
     if (route && !views[route]) {

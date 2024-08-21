@@ -24,19 +24,30 @@ var ax = {
 
       return response.data;
     } catch (error) {
-      console.error("Error fetching board data:", error);
-
       throw error;
     }
   },
-  getPosts: async function() {
+  getPosts: async function(name) {
+    try {
+      const response = await axios.get(process.env.URL + 'api/boards/posts/' + name);
 
+      return response.data;
+    } catch (error) {
+      throw error;
+    }
   },
   createPost: async function(post) {
-    console.log(post);
-    
     try {
       const response = await axios.post(process.env.URL + 'api/posts/', post);
+
+      return response.data;
+    } catch (error) {
+      throw error;
+    }
+  },
+  getPost: async function(post) {
+    try {
+      const response = await axios.get(process.env.URL + 'api/posts/' + post);
 
       return response.data;
     } catch (error) {

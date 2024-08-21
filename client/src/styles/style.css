@@ -214,6 +214,15 @@ input, textarea {
   border-radius: 6px;
 }
 
+.createTitle {
+  width: 720px;
+  border-radius: 6px;
+  height: 36px;
+  margin: 1vh;
+  padding: 1vh;
+  box-sizing: border-box;
+}
+
 .createInput {
   width: 720px;
   max-width: 720px;
