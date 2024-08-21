@@ -5,6 +5,8 @@ import '../styles/forums.css';
 import st from 'ryscott-st';
 import {ax, helpers} from 'util';
 
+import Post from './Post.jsx';
+import Reply from './Reply.jsx';
 import CreateReply from './CreateReply.jsx';
 
 const ViewPost = function() {
@@ -28,15 +30,7 @@ const ViewPost = function() {
       const reply = replies[i];
 
       rendered.push(
-        <div key={'reply' + i} className='reply h'>
-          <div className='replyInfo v'>
-            <h3>{reply?.author}</h3>
-            <small>{helpers.formatZuluDate(reply?.createdOn)}</small>
-          </div>
-          <div className='replyText h'>
-            {reply?.text}
-          </div>
-        </div>
+        <Reply key={'reply' + i} reply={reply}/>
       )
     }
 
@@ -56,17 +50,9 @@ const ViewPost = function() {
           <a href='/forums'>Forums</a> - {post?.board && <a href={'/board-' + post.board.name}>{post?.board.name}</a>} - {post?.title}
         </div>
       </div>
-      <div className='post h'>
-        <div className='postInfo v'>
-          <h3>{post?.author}</h3>
-          <small>{helpers.formatZuluDate(post?.createdOn)}</small>
-        </div>
-        <div className='postText h'>
-          {post?.text}
-        </div>
-      </div>
+      <Post post={post}/>
       {renderReplies()}
-      <CreateReply/>
+      {st.user && <CreateReply/>}
       <div className='boardSpacer'/>
     </div>
   );

@@ -35,6 +35,7 @@
   border: 4px;
   border-style: none none double none;
   z-index: 1;
+  flex: none;
 }
 
 .reply {
@@ -55,6 +56,24 @@
   flex: none;
   border-right: 1px solid;
   justify-content: start;
+}
+
+.postCard .postInfo {
+  width: unset;
+  border-right: unset;
+}
+
+.postInteract {
+  position: absolute;
+  top: 4px;
+  right: -5vh;
+  font-size: 1.8vh;
+  align-items: start;
+}
+
+.postInteract *:hover {
+  cursor: pointer;
+  color: var(--hover);
 }
 
 .postText,
@@ -79,7 +98,7 @@
   max-width: 100%;
   border-radius: 6px;
   height: 120px;
-  max-height: 120px;
+  max-height: 180px;
   min-height: 60px;
   border: none;
   padding: 2vh;

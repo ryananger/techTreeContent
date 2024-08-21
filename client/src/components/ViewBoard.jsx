@@ -16,7 +16,7 @@ const ViewBoard = function() {
     var rendered = [];
 
     for (var i = 0; i < posts.length; i++) {
-      rendered.unshift(<PostCard key={'post' + i} post={posts[i]}/>);
+      rendered.push(<PostCard key={'post' + i} post={posts[i]}/>);
     }
 
     return rendered;

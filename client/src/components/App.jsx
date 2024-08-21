@@ -1,5 +1,5 @@
 import React, {useEffect, useState} from 'react';
-import { IoMenu } from "react-icons/io5";
+import {IoMenu} from "react-icons/io5";
 
 import '../styles/style.css';
 import st from 'ryscott-st';
@@ -23,6 +23,8 @@ const App = function() {
   const [view, setView] = st.newState('view', useState(!route ? 'landing' : route));
   const [board, setBoard] = st.newState('board', useState(null));
   const [post_id, setPost_id] = st.newState('post_id', useState(null));
+  
+  const [menuOpen, setMenuOpen] = useState(false);
 
   const views = {
     landing: <Landing/>,
@@ -40,6 +42,8 @@ const App = function() {
       st.setUser(null);
       document.cookie = 'user=';
     }
+
+    setMenuOpen(false);
   };
 
   var handleUser = function() {
@@ -69,14 +73,24 @@ const App = function() {
     }
   };
 
+  var renderMenu = function() {
+    return (
+      <div className='menu v'>
+        <div>settings</div>
+        <div id='loginButton' onClick={handleLogin}>{!user ? 'login' : 'logout'}</div>
+      </div>
+    )
+  };
+
   useEffect(handleRoute, []);
   useEffect(handleUser, []);
 
   return (
     <div id='app' className='app texture v'>
-      <div className='header h'>
+      <div className='header h anchor'>
         <a className='forumsTitle' href='/forums'>techTree Academy Forums</a>
-        {route && <div id='loginButton' onClick={handleLogin}>{!user ? 'login' : 'logout'}</div>}
+        {route && <IoMenu className='menuButton' onClick={()=>{setMenuOpen(!menuOpen)}}/>}
+        {menuOpen && renderMenu()}
       </div>
       <div className='forums v'>
         {login && <Login/>}

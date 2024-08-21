@@ -49,8 +49,8 @@ html, body, #root {
   flex-direction: column;
   justify-content: flex-start;
   align-items: center;
-  overflow: scroll;
   color: var(--grass);
+  overflow: auto;
 }
 
 h1, h2, h3 {
@@ -247,4 +247,19 @@ input, textarea {
   width: 100%;
   justify-content: space-between;
   padding: 1vh;
+}
+
+.menuButton:hover {
+  cursor: pointer;
+  color: var(--hover);
+}
+
+.menu {
+  position: fixed;
+  top: 48px;
+  right: 2vh;
+  font-size: 2vh;
+  align-items: end;
+  border-top: 1px solid;
+  padding: 1vh 0;
 }
