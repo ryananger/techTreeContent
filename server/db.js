@@ -19,7 +19,10 @@ const userSchema = new mongoose.Schema({
   notifications: [Object],
   posts:    [Object],
   replies:  [Object],
-  messages: [Object]
+  messages: [Object],
+
+  admin: Boolean,
+  settings: Object
 });
 
 const boardSchema = new mongoose.Schema({
@@ -38,6 +41,7 @@ const postSchema = new mongoose.Schema({
   text: String,
   latest: Object,
   replyCount: {type: Number, default: 0},
+  pinned: Boolean,
   createdOn: {type: Date, default: Date.now}
 });
 

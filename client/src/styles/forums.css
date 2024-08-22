@@ -62,6 +62,12 @@
   border-right: unset;
 }
 
+.pinIcon {
+  position: absolute;
+  top: 1vh;
+  right: -2.5vh;
+}
+
 .postInteract {
   position: absolute;
   top: 4px;

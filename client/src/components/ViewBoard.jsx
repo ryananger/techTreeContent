@@ -16,7 +16,13 @@ const ViewBoard = function() {
     var rendered = [];
 
     for (var i = 0; i < posts.length; i++) {
-      rendered.push(<PostCard key={'post' + i} post={posts[i]}/>);
+      var post = posts[i];
+
+      if (post.pinned) {
+        rendered.unshift(<PostCard key={'post' + i} post={posts[i]}/>);
+      } else {
+        rendered.push(<PostCard key={'post' + i} post={posts[i]}/>);
+      }
     }
 
     return rendered;

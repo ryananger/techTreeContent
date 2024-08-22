@@ -13,6 +13,7 @@ const Post = function({post}) {
       return (
         <div className='postInteract v'>
           {/* <small>edit</small> */}
+          {st.user?.admin && <small onClick={handlePin}>{post.pinned ? 'unpin' : 'pin'}</small>}
           <small onClick={()=>{setConfirmDelete(true)}}>delete</small>
         </div>
       )
@@ -23,6 +24,11 @@ const Post = function({post}) {
     await ax.deletePost(post._id);
     setConfirmDelete(false);
     window.location.href = process.env.URL + 'board-' + post.board.name;
+  };
+
+  var handlePin = async function() {
+    await ax.pinPost(post._id);
+    window.location.href = process.env.URL + 'post-' + post._id;
   };
 
   return (

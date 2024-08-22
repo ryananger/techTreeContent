@@ -7,7 +7,7 @@ import { getAuth,
 import ax from './ax.js';
 
 const firebaseConfig = {
-  apiKey: "AIzaSyAJpTjNMDaBH-AjM9n7WKzLRZ2jMcu6rdg",
+  apiKey: process.env.FIREBASE_API_KEY,
   authDomain: "techtree-forums.firebaseapp.com",
   projectId: "techtree-forums",
   storageBucket: "techtree-forums.appspot.com",

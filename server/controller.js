@@ -77,10 +77,23 @@ var controller = {
     if (post.replyCount === 0) {
       post.latest = null;
     }
-    
+
     post.save();
 
     await Reply.deleteOne({_id: req.params.reply});
+
+    res.sendStatus(201);
+  },
+  pinPost: async function(req, res) {
+    var post = await Post.findOne({_id: req.params.post_id});
+
+    if (post.pinned) {
+      post.pinned = false;
+      post.save();
+    } else {
+      post.pinned = true;
+      post.save();
+    }
 
     res.sendStatus(201);
   }

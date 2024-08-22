@@ -54,27 +54,36 @@ var ax = {
       throw error;
     }
   },
-  getPost: async function(post) {
+  getPost: async function(post_id) {
     try {
-      const response = await axios.get(process.env.URL + 'api/posts/' + post);
+      const response = await axios.get(process.env.URL + 'api/posts/' + post_id);
 
       return response.data;
     } catch (error) {
       throw error;
     }
   },
-  deletePost: async function(post) {
+  deletePost: async function(post_id) {
     try {
-      const response = await axios.put(process.env.URL + 'api/posts/' + post);
+      const response = await axios.put(process.env.URL + 'api/posts/delete/' + post_id);
 
       return response.data;
     } catch (error) {
       throw error;
     }
   },
-  deleteReply: async function(reply) {
+  deleteReply: async function(reply_id) {
     try {
-      const response = await axios.put(process.env.URL + 'api/replies/' + reply);
+      const response = await axios.put(process.env.URL + 'api/replies/delete/' + reply_id);
+
+      return response.data;
+    } catch (error) {
+      throw error;
+    }
+  },
+  pinPost: async function(post_id) {
+    try {
+      const response = await axios.put(process.env.URL + 'api/posts/pin/' + post_id);
 
       return response.data;
     } catch (error) {

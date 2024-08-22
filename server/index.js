@@ -40,8 +40,9 @@ app.get('/api/boards/posts/:name', controller.getPosts);
 app.post('/api/posts/', controller.createPost);
 app.post('/api/replies/', controller.createReply);
 app.get('/api/posts/:post', controller.getPost);
-app.put('/api/posts/:post', controller.deletePost);
-app.put('/api/replies/:reply', controller.deleteReply);
+app.put('/api/posts/delete/:post', controller.deletePost);
+app.put('/api/replies/delete/:reply', controller.deleteReply);
+app.put('/api/posts/pin/:post_id', controller.pinPost);
 
 const PORT = 4001;
 
