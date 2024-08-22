@@ -106,10 +106,11 @@ p {
   min-width: 200px;
   width: max-content;
   padding: 1vh;
-  border-radius: 25px;
-  border: 2px solid var(--darkText);
-  box-shadow: 0 2px 3px var(--shadow);
-  background-color: var(--cream);
+  border-radius: 2vh;
+  font-size: 1.8vh;
+  box-shadow: 0 2px 3px rgba(0, 0, 0, 0.479);
+  background-color: var(--grass);
+  color: var(--bg);
 }
 
 .visible {

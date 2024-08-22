@@ -18,6 +18,15 @@ var ax = {
         document.cookie = `user=${uid}`;
       })
   },
+  checkUsername: async function(username) {
+    try {
+      var response = await axios.get(process.env.URL + 'api/users/checkUsername/' + username);
+
+      return response.data;
+    } catch (error) {
+      throw error;
+    }
+  },
   getBoard: async function(name) {
     try {
       const response = await axios.get(process.env.URL + 'api/boards/' + name);

@@ -5,6 +5,7 @@ import {ax, auth, helpers} from 'util';
 
 const Login = function() {
   const [signUp, setSignUp] = useState(false);
+  const [usernameGood, setUsernameGood] = useState(false);
 
   var handleSubmit = function(e) {
     e.preventDefault();
@@ -17,17 +18,39 @@ const Login = function() {
         return;
       }
 
+      if (!usernameGood) {
+        helpers.alert('Username invalid!');
+        return;
+      }
+
+      if (form.pass.value.length < 8) {
+        helpers.alert('Password should be at least 8 characters.');
+        return;
+      }
+
       var user = {
         username: form.username.value,
         email: form.email.value,
         password: form.pass.value
       };
-
-      console.log(user);
       
       auth.signUp(user);
     } else {
       auth.signIn(form.email.value, form.pass.value);
+    }
+  };
+
+  var checkUsername = async function(e) {
+    if (e.target.value.length >= 2) {
+      var usernameTaken = await ax.checkUsername(e.target.value);
+
+      if (!usernameTaken) {
+        setUsernameGood(true);
+      } else {
+        setUsernameGood(false);
+      }
+
+      console.log(usernameTaken, usernameGood);
     }
   };
 
@@ -42,7 +65,7 @@ const Login = function() {
 
         <div className='formBody v'>
           <div className='loginInputs v'>
-            {signUp && <input className='formInput' name='username' autoComplete='off' type='text' placeholder='username?'/>}
+            {signUp && <input className='formInput' name='username' autoComplete='off' type='text' placeholder='username?' onChange={checkUsername}/>}
 
             <input className='formInput' name='email' autoComplete='off' type='text'     placeholder='email address?'/>
             <input className='formInput' name='pass'  autoComplete='off' type='password' placeholder='password?'/>

@@ -4,6 +4,7 @@ import {IoMenu} from "react-icons/io5";
 import '../styles/style.css';
 import st from 'ryscott-st';
 
+import Alert from './Alert.jsx';
 import Landing from './Landing.jsx';
 import Forums from './Forums.jsx';
 import Login from './Login.jsx';
@@ -98,6 +99,7 @@ const App = function() {
         {login && <Login/>}
         {views[view]}
       </div>
+      <Alert />
     </div>
   );
 };
