@@ -73,6 +73,11 @@ var controller = {
     var post = await Post.findOne({_id: reply.parent});
 
     post.replyCount -= 1;
+
+    if (post.replyCount === 0) {
+      post.latest = null;
+    }
+    
     post.save();
 
     await Reply.deleteOne({_id: req.params.reply});

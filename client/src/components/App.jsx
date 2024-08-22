@@ -76,6 +76,7 @@ const App = function() {
   var renderMenu = function() {
     return (
       <div className='menu v'>
+        <div>profile</div>
         <div>settings</div>
         <div id='loginButton' onClick={handleLogin}>{!user ? 'login' : 'logout'}</div>
       </div>
