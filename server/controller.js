@@ -58,15 +58,24 @@ var controller = {
     res.json(post);
   },
   deletePost: async function(req, res) {
+    var post = await Post.findOne({_id: req.params.post}).populate('board');
+    var board = await Board.findOne({name: post.board.name});
+
+    board.postCount -= 1;
+    board.save();
+
     await Post.deleteOne({_id: req.params.post});
 
-    //reduce board post count, delete all replies
     res.sendStatus(201);
   },
   deleteReply: async function(req, res) {
-    await Reply.deleteOne({_id: req.params.reply});
+    var reply = await Reply.findOne({_id: req.params.reply});
+    var post = await Post.findOne({_id: reply.parent});
 
-    //reduce post reply count
+    post.replyCount -= 1;
+    post.save();
+
+    await Reply.deleteOne({_id: req.params.reply});
 
     res.sendStatus(201);
   }
