@@ -17,8 +17,8 @@ const userSchema = new mongoose.Schema({
   settings: Object,
 
   notifications: [Object],
-  posts:    [Object],
-  replies:  [Object],
+  posts:    [{type: mongoose.Schema.Types.ObjectId, ref: 'Post'}],
+  replies:  [{type: mongoose.Schema.Types.ObjectId, ref: 'Reply'}],
   messages: [Object],
 
   admin: Boolean,

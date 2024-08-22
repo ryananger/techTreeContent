@@ -9,9 +9,19 @@ var controller = {
       })
   },
   getUser: function(req, res) {
-    User.findOne({uid: req.params.uid})
+    User.findOne({uid: req.params.uid}).populate('posts replies')
       .then(function(user) {
         res.json(user);
+      })
+  },
+  checkUsername: function(req, res) {
+    User.findOne({username: req.params.username})
+      .then(function(user) {
+        if (!user) {
+          res.json(false);
+        } else {
+          res.json(true);
+        }
       })
   },
   getBoard: function(req, res) {
@@ -28,19 +38,25 @@ var controller = {
   createPost: async function(req, res) {
     var post = req.body;
     var board = await Board.findOne({name: req.body.board});
+    var user = await User.findOne({username: req.body.author});
 
     post.board = board._id;
     post = await Post.create(post);
 
+    user.posts.push(post._id);
+
     board.posts.unshift(post._id);
     board.postCount += 1;
-    await Board.updateOne({name: board.name}, board);
+
+    board.save();
+    user.save();
 
     res.json(post._id);
   },
   createReply: async function(req, res) {
     var reply = req.body;
     var post = await Post.findOne({_id: req.body.parent});
+    var user = await User.findOne({username: req.body.author});
 
     reply = await Reply.create(reply);
 
@@ -48,7 +64,10 @@ var controller = {
     post.replyCount += 1;
     post.latest = {author: reply.author, createdOn: reply.createdOn};
     
-    await Post.updateOne({_id: post._id}, post);
+    user.replies.push(reply._id);
+
+    post.save();
+    user.save();
 
     res.json(reply);
   },
@@ -60,6 +79,20 @@ var controller = {
   deletePost: async function(req, res) {
     var post = await Post.findOne({_id: req.params.post}).populate('board');
     var board = await Board.findOne({name: post.board.name});
+    var user = await User.findOne({username: post.author});
+
+    var newUserPosts = [];
+
+    for (var i = 0; i < user.posts.length; i++) {
+      console.log(user.posts[i], post._id);
+
+      if (user.posts[i].toString() !== post._id.toString()) {
+        newUserPosts.push(user.posts[i]);
+      }
+    }
+
+    user.posts = newUserPosts;
+    user.save();
 
     board.postCount -= 1;
     board.save();
@@ -71,6 +104,18 @@ var controller = {
   deleteReply: async function(req, res) {
     var reply = await Reply.findOne({_id: req.params.reply});
     var post = await Post.findOne({_id: reply.parent});
+    var user = await User.findOne({username: post.author});
+
+    var newUserReplies = [];
+
+    for (var i = 0; i < user.replies.length; i++) {
+      if (user.replies[i].toString() !== reply._id.toString()) {
+        newUserReplies.push(user.replies[i]);
+      }
+    }
+
+    user.replies = newUserReplies;
+    user.save();
 
     post.replyCount -= 1;
 
