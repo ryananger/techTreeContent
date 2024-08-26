@@ -7,8 +7,6 @@ import st from 'ryscott-st';
 import Alert from './Alert.jsx';
 import Home from './Home.jsx';
 import Login from './Login.jsx';
-import Profile from './Profile.jsx';
-import Settings from './Settings.jsx';
 import Foot from './Foot.jsx';
 
 import GettingStarted from './content/GettingStarted.jsx';
@@ -29,8 +27,7 @@ const App = function() {
 
   const views = {
     home:     <Home/>,
-    profile:  <Profile/>,
-    settings: <Settings/>,
+    gettingStarted: <GettingStarted/>,
     unfound: '404'
   };
 
@@ -69,8 +66,6 @@ const App = function() {
   var renderMenu = function() {
     return (
       <div className='menu v'>
-        {st.user && <a className='menuButton' href='/profile'>profile</a>}
-        {st.user && <div className='menuButton' onClick={()=>{setView('settings')}}>settings</div>}
         <div id='loginButton' className='menuButton' onClick={handleLogin}>{!user ? 'login' : 'logout'}</div>
       </div>
     )

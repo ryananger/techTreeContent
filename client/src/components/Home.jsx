@@ -37,28 +37,28 @@ const Home = function() {
         <small className={`headerExtra float`}>no robots were harmed in the creation of this website</small>
       </header>
       <div className='content h'>
-        <a className='contentCard v c' href='/content-GettingStarted'>
+        <a className='contentCard v c' href='/content-gettingStarted'>
           Getting Started with Node.js
         </a>
-        <a className='contentCard v c' href='/content-GettingStarted'>
+        <a className='contentCard v c' href='/content-gettingStarted'>
           How to Hold a Place
         </a>
-        <a className='contentCard v c' href='/content-GettingStarted'>
+        <a className='contentCard v c' href='/content-gettingStarted'>
           How to Hold a Place
         </a>
-        <a className='contentCard v c' href='/content-GettingStarted'>
+        <a className='contentCard v c' href='/content-gettingStarted'>
           How to Hold a Place
         </a>
-        <a className='contentCard v c' href='/content-GettingStarted'>
+        <a className='contentCard v c' href='/content-gettingStarted'>
           How to Hold a Place
         </a>
-        <a className='contentCard v c' href='/content-GettingStarted'>
+        <a className='contentCard v c' href='/content-gettingStarted'>
           How to Hold a Place
         </a>
-        <a className='contentCard v c' href='/content-GettingStarted'>
+        <a className='contentCard v c' href='/content-gettingStarted'>
           How to Hold a Place
         </a>
-        <a className='contentCard v c' href='/content-GettingStarted'>
+        <a className='contentCard v c' href='/content-gettingStarted'>
           How to Hold a Place
         </a>
       </div>
