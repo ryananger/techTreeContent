@@ -4,15 +4,18 @@ import {IoMenu} from "react-icons/io5";
 import '../styles/style.css';
 import st from 'ryscott-st';
 
+import {helpers, auth} from 'util';
+import {ax} from 'util';
+
 import Alert from './Alert.jsx';
 import Home from './Home.jsx';
 import Login from './Login.jsx';
 import Foot from './Foot.jsx';
 
 import GettingStarted from './content/GettingStarted.jsx';
-
-import {helpers, auth} from 'util';
-import {ax} from 'util';
+import IntroToHTML from './content/IntroToHTML.jsx';
+import IntroToCSS from './content/IntroToCSS.jsx';
+import IntroToJavascript from './content/IntroToJavascript.jsx';
 
 const isMobile = st.isMobile = window.innerWidth < 1024;
 
@@ -27,6 +30,9 @@ const App = function() {
 
   const views = {
     home:     <Home/>,
+    introToHTML: <IntroToHTML/>,
+    introToCSS: <IntroToCSS/>,
+    introToJavascript: <IntroToJavascript/>,
     gettingStarted: <GettingStarted/>,
     unfound: '404'
   };

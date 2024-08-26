@@ -1,6 +1,7 @@
 import React, {useState, useEffect} from 'react';
 
 import '../styles/home.css';
+import '../styles/content.css';
 import st from 'ryscott-st';
 
 var count = 0;
@@ -37,29 +38,17 @@ const Home = function() {
         <small className={`headerExtra float`}>no robots were harmed in the creation of this website</small>
       </header>
       <div className='content h'>
+        <a className='contentCard v c' href='/content-introToHTML'>
+          Intro to HTML
+        </a>
+        <a className='contentCard v c' href='/content-introToCSS'>
+          Intro to CSS
+        </a>
+        <a className='contentCard v c' href='/content-introToCSS'>
+          Intro to JavaScript
+        </a>
         <a className='contentCard v c' href='/content-gettingStarted'>
           Getting Started with Node.js
-        </a>
-        <a className='contentCard v c' href='/content-gettingStarted'>
-          How to Hold a Place
-        </a>
-        <a className='contentCard v c' href='/content-gettingStarted'>
-          How to Hold a Place
-        </a>
-        <a className='contentCard v c' href='/content-gettingStarted'>
-          How to Hold a Place
-        </a>
-        <a className='contentCard v c' href='/content-gettingStarted'>
-          How to Hold a Place
-        </a>
-        <a className='contentCard v c' href='/content-gettingStarted'>
-          How to Hold a Place
-        </a>
-        <a className='contentCard v c' href='/content-gettingStarted'>
-          How to Hold a Place
-        </a>
-        <a className='contentCard v c' href='/content-gettingStarted'>
-          How to Hold a Place
         </a>
       </div>
     </>

@@ -149,12 +149,14 @@ div {
   height: 48px;
   justify-content: space-between;
   padding: 1vh;
+  background-color: var(--bg);
 }
 
 .foot {
   width: 100%;
-  height: calc(10svh - 12px);
+  height: calc(5svh);
   flex: none;
+  background-color: var(--bg);
 }
 
 input, textarea {
@@ -236,7 +238,6 @@ input, textarea {
   right: 2vh;
   font-size: 2vh;
   align-items: end;
-  border-top: 1px solid;
   padding: 1vh 0;
   z-index: 1;
 }

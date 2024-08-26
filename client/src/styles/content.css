@@ -1,0 +1,33 @@
+.contentPage {
+  margin: 4vh;
+}
+
+.contentView {
+  font-size: 16px;
+  width: 800px;
+}
+
+.contentView p,
+.contentView h2,
+.contentView h3,
+.contentView h4 {
+  padding: 0;
+  margin: 2vh 0;
+}
+
+pre {
+  padding: 2vh;
+  margin: 2vh;
+  border-radius: 2vh;
+  background-color: rgba(0, 0, 0, 0.295);
+}
+
+.upNext {
+  width: 100%;
+  height: 10vh;
+  padding: 2vh;
+  margin: 2vh;
+  box-sizing: border-box;
+  border-radius: 2vh;
+  background-color: rgba(0, 0, 0, 0.295);
+}
