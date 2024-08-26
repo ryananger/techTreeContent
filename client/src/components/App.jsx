@@ -5,6 +5,8 @@ import '../styles/style.css';
 import st from 'ryscott-st';
 
 import Alert from './Alert.jsx';
+import Profile from './Profile.jsx';
+import Settings from './Settings.jsx';
 import Landing from './Landing.jsx';
 import Forums from './Forums.jsx';
 import Login from './Login.jsx';
@@ -28,10 +30,12 @@ const App = function() {
   const [menuOpen, setMenuOpen] = useState(false);
 
   const views = {
-    landing: <Landing/>,
-    forums:  <Forums/>,
+    landing:   <Landing/>,
+    forums:    <Forums/>,
     viewBoard: <ViewBoard/>,
-    viewPost: <ViewPost/>,
+    viewPost:  <ViewPost/>,
+    profile:   <Profile/>,
+    settings:  <Settings/>,
     unfound: '404'
   };
 
@@ -77,9 +81,9 @@ const App = function() {
   var renderMenu = function() {
     return (
       <div className='menu v'>
-        <div>profile</div>
-        <div>settings</div>
-        <div id='loginButton' onClick={handleLogin}>{!user ? 'login' : 'logout'}</div>
+        {st.user && <a className='menuButton' href='/profile'>profile</a>}
+        {st.user && <div className='menuButton' onClick={()=>{setView('settings')}}>settings</div>}
+        <div id='loginButton' className='menuButton' onClick={handleLogin}>{!user ? 'login' : 'logout'}</div>
       </div>
     )
   };

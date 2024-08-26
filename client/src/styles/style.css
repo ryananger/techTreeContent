@@ -193,7 +193,6 @@ input, textarea {
 
 .createPostButton:hover,
 .backButton:hover,
-#loginButton:hover,
 .sendButton:hover {
   color: var(--hover);
   cursor: pointer;
