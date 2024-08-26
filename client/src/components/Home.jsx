@@ -1,11 +1,11 @@
 import React, {useState, useEffect} from 'react';
 
-import '../styles/landing.css';
+import '../styles/home.css';
 import st from 'ryscott-st';
 
 var count = 0;
 
-const Landing = function() {
+const Home = function() {
   const [opt, setOpt] = useState(taglines[0]);
 
   var switchOption = function() {
@@ -30,13 +30,39 @@ const Landing = function() {
   useEffect(switchOption, []);
 
   return (
-    <header className='anchor v c'>
-      <img className='treeImage' src='/images/tree.svg'/>
-      <h1 className={`landingTitle ${st.isMobile ? '' : 'float'}`}>techTree Academy Forums</h1>
-      <p className={`landingTagline ${st.isMobile ? '' : 'float'}`}>Welcome to techTree Academy, where we {opt}</p>
-      <a className='enterButton float' href='forums'>ENTER</a>
-      <small className={`landingExtra float`}>no robots were harmed in the creation of this website</small>
-    </header>
+    <>
+      <header className='anchor v c'>
+        <h1 className={`headerTitle ${st.isMobile ? '' : 'float'}`}><a href='/'>techTree Academy</a></h1>
+        <p className={`headerTagline ${st.isMobile ? '' : 'float'}`}>Welcome to techTree Academy, where we {opt}</p>
+        <small className={`headerExtra float`}>no robots were harmed in the creation of this website</small>
+      </header>
+      <div className='content h'>
+        <a className='contentCard v c' href='/content-GettingStarted'>
+          Getting Started with Node.js
+        </a>
+        <a className='contentCard v c' href='/content-GettingStarted'>
+          How to Hold a Place
+        </a>
+        <a className='contentCard v c' href='/content-GettingStarted'>
+          How to Hold a Place
+        </a>
+        <a className='contentCard v c' href='/content-GettingStarted'>
+          How to Hold a Place
+        </a>
+        <a className='contentCard v c' href='/content-GettingStarted'>
+          How to Hold a Place
+        </a>
+        <a className='contentCard v c' href='/content-GettingStarted'>
+          How to Hold a Place
+        </a>
+        <a className='contentCard v c' href='/content-GettingStarted'>
+          How to Hold a Place
+        </a>
+        <a className='contentCard v c' href='/content-GettingStarted'>
+          How to Hold a Place
+        </a>
+      </div>
+    </>
   );
 };
 
@@ -88,5 +114,4 @@ const taglines = [
   'watch your ideas grow like a chia pet.',
 ];
 
-
-export default Landing;
+export default Home;

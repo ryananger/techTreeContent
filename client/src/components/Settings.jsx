@@ -1,6 +1,5 @@
 import React, {useState, useEffect} from 'react';
 
-import '../styles/forums.css';
 import st from 'ryscott-st';
 
 const Settings = function() {

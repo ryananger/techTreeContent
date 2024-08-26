@@ -5,13 +5,13 @@ import '../styles/style.css';
 import st from 'ryscott-st';
 
 import Alert from './Alert.jsx';
+import Home from './Home.jsx';
+import Login from './Login.jsx';
 import Profile from './Profile.jsx';
 import Settings from './Settings.jsx';
-import Landing from './Landing.jsx';
-import Forums from './Forums.jsx';
-import Login from './Login.jsx';
-import ViewPost from './ViewPost.jsx';
-import ViewBoard from './ViewBoard.jsx';
+import Foot from './Foot.jsx';
+
+import GettingStarted from './content/GettingStarted.jsx';
 
 import {helpers, auth} from 'util';
 import {ax} from 'util';
@@ -23,19 +23,14 @@ const route = st.route = window.location.pathname.slice(1);
 const App = function() {
   const [user, setUser] = st.newState('user', useState(null));
   const [login, setLogin] = st.newState('login', useState(false));
-  const [view, setView] = st.newState('view', useState(!route ? 'landing' : route));
-  const [board, setBoard] = st.newState('board', useState(null));
-  const [post_id, setPost_id] = st.newState('post_id', useState(null));
+  const [view, setView] = st.newState('view', useState(!route ? 'home' : route));
   
   const [menuOpen, setMenuOpen] = useState(false);
 
   const views = {
-    landing:   <Landing/>,
-    forums:    <Forums/>,
-    viewBoard: <ViewBoard/>,
-    viewPost:  <ViewPost/>,
-    profile:   <Profile/>,
-    settings:  <Settings/>,
+    home:     <Home/>,
+    profile:  <Profile/>,
+    settings: <Settings/>,
     unfound: '404'
   };
 
@@ -60,20 +55,13 @@ const App = function() {
   };
 
   var handleRoute = function() {
-    if (route && route.includes('board-')) {
-      setView('viewBoard');
-      setBoard(route.slice(6));
-      return;
-    } else if (route && route.includes('post-')) {
-      setView('viewPost');
-      setPost_id(route.slice(5));
-      return;
-    } else {
-      setBoard(null);
-      setPost_id(null);
-    }
+    if (route.includes('content-')) {
+      const page = route.slice(8);
 
-    if (route && !views[route]) {
+      setView(page);
+    } else if (route && views[route]) {
+      setView(route);
+    } else if (route && !views[route]) {
       setView('unfound');
     }
   };
@@ -94,16 +82,18 @@ const App = function() {
   return (
     <div id='app' className='appv'>
       <div className='texture'/>
-      <div className='header h anchor'>
-        <a className='forumsTitle' href='/forums'>techTree Academy Forums</a>
-        {route && <IoMenu className='menuButton' onClick={()=>{setMenuOpen(!menuOpen)}}/>}
+      <div className='header h anchor'> 
+        {view !== 'home' && <h3><a href='/'>techTree Academy</a></h3>}
+        {view === 'home' && <div/>}
+        <IoMenu className='menuButton' onClick={()=>{setMenuOpen(!menuOpen)}}/>
         {menuOpen && renderMenu()}
       </div>
-      <div className='forums v'>
+      <div className='main v'>
         {login && <Login/>}
         {views[view]}
       </div>
       <Alert />
+      <Foot/>
     </div>
   );
 };

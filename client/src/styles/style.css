@@ -62,6 +62,7 @@ a:hover,
 a:visited {
   color: unset;
   text-decoration: none;
+  cursor: pointer;
 }
 
 a:hover {
@@ -154,7 +155,6 @@ div {
   width: 100%;
   height: calc(10svh - 12px);
   flex: none;
-  background-color: var(--grass);
 }
 
 input, textarea {
@@ -180,8 +180,7 @@ input, textarea {
 
 /**/
 
-.auth,
-.createPost {
+.auth {
   width: 100vw;
   height: 100vh;
   position: fixed;
@@ -191,15 +190,13 @@ input, textarea {
   background-color: rgba(0, 0, 0, 0.479);
 }
 
-.createPostButton:hover,
 .backButton:hover,
 .sendButton:hover {
   color: var(--hover);
   cursor: pointer;
 }
 
-#loginForm,
-#createForm {
+#loginForm {
   background-color: var(--bg);
   padding: 2vh;
   border-radius: 2vh;
@@ -208,32 +205,13 @@ input, textarea {
 }
 
 .formInput,
-.formSubmit,
-.createInput {
+.formSubmit {
   width: 240px;
   height: 36px;
   box-sizing: border-box;
   margin: 1vh;
   padding: 1vh;
   border-radius: 6px;
-}
-
-.createTitle {
-  width: 720px;
-  border-radius: 6px;
-  height: 36px;
-  margin: 1vh;
-  padding: 1vh;
-  box-sizing: border-box;
-}
-
-.createInput {
-  width: 720px;
-  max-width: 720px;
-  min-width: 720px;
-  height: 240px;
-  max-height: 240px;
-  min-height: 120px;
 }
 
 .formHead,
@@ -245,12 +223,6 @@ input, textarea {
 .signUpText,
 .formSubmit {
   cursor: pointer;
-}
-
-.createButtons {
-  width: 100%;
-  justify-content: space-between;
-  padding: 1vh;
 }
 
 .menuButton:hover {
@@ -266,4 +238,5 @@ input, textarea {
   align-items: end;
   border-top: 1px solid;
   padding: 1vh 0;
+  z-index: 1;
 }
