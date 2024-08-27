@@ -12,13 +12,13 @@ import Home from './Home.jsx';
 import Login from './Login.jsx';
 import Foot from './Foot.jsx';
 
-import IntroToHTML from './content/IntroToHTML.jsx';
-import IntroToCSS from './content/IntroToCSS.jsx';
-import IntroToJavascript from './content/IntroToJavascript.jsx';
-import GettingStarted from './content/GettingStarted.jsx';
-import SetupReact from './content/SetupReact.jsx';
-import MyFirstReactApp from './content/MyFirstReactApp.jsx';
-import TicTacToe from './content/ticTacToe.jsx';
+import IntroToHTML from './week1/IntroToHTML.jsx';
+import IntroToCSS from './week1/IntroToCSS.jsx';
+import IntroToJavascript from './week1/IntroToJavascript.jsx';
+import GettingStarted from './week1/GettingStarted.jsx';
+import SetupReact from './week1/SetupReact.jsx';
+import MyFirstReactApp from './week1/MyFirstReactApp.jsx';
+import TicTacToe from './week1/ticTacToe.jsx';
 
 const isMobile = st.isMobile = window.innerWidth < 1024;
 

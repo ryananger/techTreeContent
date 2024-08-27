@@ -98,7 +98,7 @@ module.exports = {
 touch src/index.js src/App.jsx src/index.html`}
         </SyntaxHighlighter>
 
-        <p>Edit <code>src/index.html</code> to include a basic HTML template:</p>
+        <p>Edit <code>src/index.html</code> to include a basic HTML template. Make note of the <code>div</code> element with id 'root':</p>
         <SyntaxHighlighter language="html" style={twilight}>
 {`<!DOCTYPE html>
 <html lang="en">
@@ -113,10 +113,10 @@ touch src/index.js src/App.jsx src/index.html`}
 </html>`}
         </SyntaxHighlighter>
 
-        <p>Edit <code>src/index.js</code> to include a basic React component:</p>
+        <p>Edit <code>src/index.js</code> to include a basic React component. This defines the base of your React app and attaches it to the root element from above:</p>
         <SyntaxHighlighter language="javascript" style={twilight}>
 {`import React from 'react';
-import { createRoot } from 'react-dom/client';
+import {createRoot} from 'react-dom/client';
 
 import App from './App.jsx';
 
@@ -124,7 +124,7 @@ const root = createRoot(document.getElementById('root'));
 root.render(<App />);`}
         </SyntaxHighlighter>
 
-        <p>Edit <code>src/App.jsx</code> to define your React component:</p>
+        <p>Edit <code>src/App.jsx</code> to define your React component. App is a 'function' that 'returns' the div to the root in your HTML above:</p>
         <SyntaxHighlighter language="javascript" style={twilight}>
 {`import React from 'react';
 
@@ -153,7 +153,8 @@ export default App;`}
 {`npm run start`}
         </SyntaxHighlighter>
 
-        <p>This command will start a local development server, compile your React code, and open your new React app in the browser.</p>
+        <p>This command will start a local development server, compile your React code, and open your new React app in the browser. 
+          The build script will be needed later.</p>
 
         <h2>7. Conclusion</h2>
         <p>By setting up your React project from scratch, you gain more control over your environment and better understand the tools you're using. Now you’re ready to start building powerful React applications!</p>
