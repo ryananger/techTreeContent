@@ -38,8 +38,10 @@ export default App;`}
 {`import React from 'react';
 
 const Square = function({value, onClick}) {
+  const style = {width: '72px', aspectRatio: 1};
+
   return (
-    <button className="square" style={{width: '72px', aspectRatio: 1}} onClick={onClick}>
+    <button className="square" style={style} onClick={onClick}>
       {value ? value : '...'}
     </button>
   );
@@ -111,13 +113,13 @@ const Board = function() {
     setSquares(nextSquares);
     setXIsNext(!xIsNext);
   };
-};`}
+  ...`}
         </SyntaxHighlighter>
 
         <p>We've added state using the <code>useState</code> hook. The <code>handleClick</code> function updates the squares array when a square is clicked and switches to the next player.</p>
 
         <h3>Step 3: Determine the Winner</h3>
-        <p>Now let's add logic to determine the winner:</p>
+        <p>Now let's add a function below the <code>Board</code> component to determine the winner:</p>
         <SyntaxHighlighter language="javascript" style={twilight}>
 {`const calculateWinner = function(squares) {
   const lines = [
@@ -142,6 +144,7 @@ const Board = function() {
   return null;
 };`}    </SyntaxHighlighter>
 
+        <p>And inside the component:</p>
         <SyntaxHighlighter language="javascript" style={twilight}>
 {`const winner = calculateWinner(squares);
 
@@ -249,7 +252,7 @@ export default Board;`}
 
       </div>
       <h3 className='upNext v c'>
-        <a href='/content-gettingStarted'></a>
+        <a href='/content-understandingTicTacToe'>Up Next: Understanding the Tic Tac Toe App</a>
       </h3>
     </div>
   );

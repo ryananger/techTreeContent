@@ -15,6 +15,10 @@
   margin: 2vh 0;
 }
 
+.contentView code {
+  color: var(--hover);
+}
+
 pre {
   padding: 2vh;
   margin: 2vh;
@@ -24,6 +28,10 @@ pre {
   white-space: unset !important;
   border: none !important;
   box-shadow: none !important;
+}
+
+code.language-bash {
+  white-space: unset !important;
 }
 
 .upNext {

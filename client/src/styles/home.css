@@ -36,15 +36,32 @@ header {
   flex-wrap: wrap;
 }
 
-.contentCard {
-  width: 320px;
+.contentCardContainer {
+  width: 22%;
   height: 240px;
+}
+
+.contentCard {
+  width: 90%;
+  height: 90%;
   border-radius: 2vh;
   margin: 1vh;
   padding: 2vh;
   background-color: rgba(0, 0, 0, 0.295);
   flex: none;
   text-align: center;
+  
+  transition: width 1s, height 1s;
+}
+
+.contentCard:hover {
+  width: 98%;
+  height: 98%;
+  transition: width 0.1s, height 0.1s;
+}
+
+.contentCardText {
+  width: 200px;
 }
 
 .weekNav {

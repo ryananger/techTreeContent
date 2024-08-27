@@ -19,6 +19,8 @@ import GettingStarted from './week1/GettingStarted.jsx';
 import SetupReact from './week1/SetupReact.jsx';
 import MyFirstReactApp from './week1/MyFirstReactApp.jsx';
 import TicTacToe from './week1/ticTacToe.jsx';
+import UnderstandingTicTacToe from './week1/understandingTicTacToe.jsx';
+import ApplyingStyle from './week2/ApplyingStyle.jsx';
 
 const isMobile = st.isMobile = window.innerWidth < 1024;
 
@@ -27,19 +29,24 @@ const route = st.route = window.location.pathname.slice(1);
 const App = function() {
   const [user, setUser] = st.newState('user', useState(null));
   const [login, setLogin] = st.newState('login', useState(false));
-  const [view, setView] = st.newState('view', useState(!route ? 'home' : route));
+  const [week, setWeek] = st.newState('week', useState(null));
+  const [view, setView] = st.newState('view', useState(!route || route.includes('week') ? 'home' : route));
   
   const [menuOpen, setMenuOpen] = useState(false);
 
   const views = {
-    home:              <Home/>,
-    introToHTML:       <IntroToHTML/>,
-    introToCSS:        <IntroToCSS/>,
-    introToJavascript: <IntroToJavascript/>,
-    gettingStarted:    <GettingStarted/>,
-    setupReact:        <SetupReact/>,
-    myFirstReactApp:   <MyFirstReactApp/>,
-    ticTacToe:         <TicTacToe/>,
+    home:                   <Home/>,
+    //week1
+    introToHTML:            <IntroToHTML/>,
+    introToCSS:             <IntroToCSS/>,
+    introToJavascript:      <IntroToJavascript/>,
+    gettingStarted:         <GettingStarted/>,
+    setupReact:             <SetupReact/>,
+    myFirstReactApp:        <MyFirstReactApp/>,
+    ticTacToe:              <TicTacToe/>,
+    understandingTicTacToe: <UnderstandingTicTacToe/>,
+    //week2
+    applyingStyle: <ApplyingStyle/>,
     unfound: '404'
   };
 
@@ -64,6 +71,16 @@ const App = function() {
   };
 
   var handleRoute = function() {
+    if (route.includes('week')) {
+      const weekNum = Number(route[4]);
+
+      setView('home');
+      setWeek(weekNum);
+      return;
+    } else {
+      setWeek(1);
+    }
+
     if (route.includes('content-')) {
       const page = route.slice(8);
 
@@ -85,6 +102,10 @@ const App = function() {
 
   useEffect(handleRoute, []);
   useEffect(handleUser, []);
+
+  if (!week) {
+    return;
+  }
 
   return (
     <div id='app' className='appv'>
