@@ -70,12 +70,6 @@ export default App;`}
         <p>The <code>button</code> element uses the <code>onClick</code> attribute to bind the <code>handleClick</code> function to the button’s click event. 
         This means every time the button is clicked, <code>handleClick</code> is executed, incrementing the counter.</p>
 
-        <h3>Step 5: Export the App Component</h3>
-        <p>Finally, don’t forget to export the <code>App</code> component so it can be used elsewhere in your project:</p>
-        <SyntaxHighlighter language="javascript" style={twilight}>
-{`export default App;`}
-        </SyntaxHighlighter>
-
         <h2>Full App Component</h2>
         <p>Here’s the full <code>App.jsx</code> file after combining all the steps:</p>
         <SyntaxHighlighter language="javascript" style={twilight}>
