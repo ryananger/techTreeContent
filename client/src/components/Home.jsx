@@ -38,18 +38,13 @@ const Home = function() {
         <small className={`headerExtra float`}>no robots were harmed in the creation of this website</small>
       </header>
       <div className='content h'>
-        <a className='contentCard v c' href='/content-introToHTML'>
-          Intro to HTML
-        </a>
-        <a className='contentCard v c' href='/content-introToCSS'>
-          Intro to CSS
-        </a>
-        <a className='contentCard v c' href='/content-introToCSS'>
-          Intro to JavaScript
-        </a>
-        <a className='contentCard v c' href='/content-gettingStarted'>
-          Getting Started with Node.js
-        </a>
+        <a className='contentCard v c' href='/content-introToHTML'>Intro to HTML</a>
+        <a className='contentCard v c' href='/content-introToCSS'>Intro to CSS</a>
+        <a className='contentCard v c' href='/content-introToJavascript'>Intro to JavaScript</a>
+        <a className='contentCard v c' href='/content-gettingStarted'>Getting Started with Node.js</a>
+        <a className='contentCard v c' href='/content-setupReact'>Setting up a React Project from Scratch</a>
+        <a className='contentCard v c' href='/content-myFirstReactApp'>My First React App</a>    
+        <a className='contentCard v c' href='/content-ticTacToe'>Tic Tac Toe</a>   
       </div>
     </>
   );

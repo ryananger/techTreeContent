@@ -1,4 +1,6 @@
 import React from 'react';
+import { Prism as SyntaxHighlighter } from 'react-syntax-highlighter';
+import { twilight } from 'react-syntax-highlighter/dist/esm/styles/prism';
 
 const GettingStarted = function() {
   return (
@@ -15,22 +17,22 @@ const GettingStarted = function() {
         <p>If you're on a Linux machine, installing Node.js and npm is a breeze. Here's how you do it:</p>
         <h3>Step 1: Update Your Package List</h3>
         <p>Open your terminal and run the following command to update your package list:</p>
-        <pre>
-          <code>sudo apt update</code>
-        </pre>
+        <SyntaxHighlighter language="bash" style={twilight}>
+{`sudo apt update`}
+        </SyntaxHighlighter>
+
         <h3>Step 2: Install Node.js and npm</h3>
         <p>You can install Node.js and npm with a single command:</p>
-        <pre>
-          <code>sudo apt install nodejs npm -y</code>
-        </pre>
+        <SyntaxHighlighter language="bash" style={twilight}>
+{`sudo apt install nodejs npm -y`}
+        </SyntaxHighlighter>
+
         <h3>Step 3: Verify the Installation</h3>
         <p>Check if Node.js and npm were installed correctly:</p>
-        <pre>
-          <code>
-            node -v<br/>
-            npm -v
-          </code>
-        </pre>
+        <SyntaxHighlighter language="bash" style={twilight}>
+{`node -v
+npm -v`}
+        </SyntaxHighlighter>
         <p>This should display the version numbers, confirming that both are installed and ready to go.</p>
         <br/>
         <h2>2. Setting Up Node.js and npm on Mac</h2>
@@ -40,18 +42,17 @@ const GettingStarted = function() {
         </p>
         <h3>Step 1: Install Node.js and npm via Homebrew</h3>
         <p>Open your terminal and run:</p>
-        <pre>
-          <code>brew install node</code>
-        </pre>
+        <SyntaxHighlighter language="bash" style={twilight}>
+{`brew install node`}
+        </SyntaxHighlighter>
         <p>This command installs both Node.js and npm.</p>
+
         <h3>Step 2: Verify the Installation</h3>
         <p>Once the installation is complete, check if everything worked:</p>
-        <pre>
-          <code>
-            node -v<br/>
-            npm -v
-          </code>
-        </pre>
+        <SyntaxHighlighter language="bash" style={twilight}>
+{`node -v
+npm -v`}
+        </SyntaxHighlighter>
         <p>If you see the version numbers, you're all set!</p>
         <br/>
         <h2>3. Setting Up Node.js and npm on Windows (WSL)</h2>
@@ -60,9 +61,9 @@ const GettingStarted = function() {
 
         <h3>Step 1: Install WSL</h3>
         <p>If you haven't set up WSL yet, you'll need to install it. Open PowerShell as an administrator and run:</p>
-        <pre>
-          <code>wsl --install</code>
-        </pre>
+        <SyntaxHighlighter language="bash" style={twilight}>
+{`wsl --install`}
+        </SyntaxHighlighter>
         <p>This command installs WSL and sets up Ubuntu as the default Linux distribution. You'll need to restart your computer after installation.</p>
 
         <h3>Step 2: Open Your WSL Terminal</h3>
@@ -73,24 +74,22 @@ const GettingStarted = function() {
 
         <h3>Step 3: Update Your Package List</h3>
         <p>Inside the WSL terminal, update your package list with:</p>
-        <pre>
-          <code>sudo apt update</code>
-        </pre>
+        <SyntaxHighlighter language="bash" style={twilight}>
+{`sudo apt update`}
+        </SyntaxHighlighter>
 
         <h3>Step 4: Install Node.js and npm</h3>
         <p>Now, install Node.js and npm using the following command:</p>
-        <pre>
-          <code>sudo apt install nodejs npm -y</code>
-        </pre>
+        <SyntaxHighlighter language="bash" style={twilight}>
+{`sudo apt install nodejs npm -y`}
+        </SyntaxHighlighter>
 
         <h3>Step 5: Verify the Installation</h3>
         <p>To confirm that Node.js and npm are installed correctly, run:</p>
-        <pre>
-          <code>
-            node -v<br/>
-            npm -v
-          </code>
-        </pre>
+        <SyntaxHighlighter language="bash" style={twilight}>
+{`node -v
+npm -v`}
+        </SyntaxHighlighter>
         <p>If you see the version numbers, you're all set!</p>
 
         <br/>
@@ -98,13 +97,15 @@ const GettingStarted = function() {
         <p>Now that Node.js and npm are installed, you can start building your projects. If you're new to Node.js, 
           I recommend starting with something simple like setting up an Express server or playing around with some npm packages.</p>
         <p>To install a package with npm, simply use:</p>
-        <pre>
-          <code>npm install package-name</code>
-        </pre>
+        <SyntaxHighlighter language="bash" style={twilight}>
+{`npm install package-name`}
+        </SyntaxHighlighter>
         <p>Replace <code>package-name</code> with the name of the package you want to install, and npm will handle the rest.</p>
         <p>And that's it! Whether you're on Linux, Mac, or Windows, you're now all set up to dive into the world of Node.js and npm. Happy coding!</p>
       </div>
-      <div className='upNext'/>
+      <h3 className='upNext v c'>
+        <a href='/content-setupReact'>Up Next: Setting Up a React Project From Scratch</a>
+      </h3>
     </div>
   );
 };

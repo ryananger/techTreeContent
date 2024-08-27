@@ -1,4 +1,6 @@
 import React from 'react';
+import { Prism as SyntaxHighlighter } from 'react-syntax-highlighter';
+import { twilight } from 'react-syntax-highlighter/dist/esm/styles/prism';
 
 const IntroToHTML = function() {
   return (
@@ -14,20 +16,18 @@ const IntroToHTML = function() {
           <p>Every HTML document starts with a <code>&lt;!DOCTYPE html&gt;</code> declaration, which tells the browser that this is an HTML5 document. 
           Here’s what a basic HTML structure looks like:</p>
           
-          <pre>
-            <code>
-              &lt;!DOCTYPE html&gt;{'\n'}
-              &lt;html lang="en"&gt;{'\n'}
-              &nbsp;&nbsp;&lt;head&gt;{'\n'}
-              &nbsp;&nbsp;&nbsp;&nbsp;&lt;title&gt;Your Page Title&lt;/title&gt;{'\n'}
-              &nbsp;&nbsp;&lt;/head&gt;{'\n'}
-              &nbsp;&nbsp;&lt;body&gt;{'\n'}
-              &nbsp;&nbsp;&nbsp;&nbsp;&lt;h1&gt;Welcome to My Website&lt;/h1&gt;{'\n'}
-              &nbsp;&nbsp;&nbsp;&nbsp;&lt;p&gt;This is a simple paragraph.&lt;/p&gt;{'\n'}
-              &nbsp;&nbsp;&lt;/body&gt;{'\n'}
-              &lt;/html&gt;
-            </code>
-          </pre>
+          <SyntaxHighlighter language="html" style={twilight}>
+{`<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Your Page Title</title>
+  </head>
+  <body>
+    <h1>Welcome to My Website</h1>
+    <p>This is a simple paragraph.</p>
+  </body>
+</html>`}
+          </SyntaxHighlighter>
 
           <h2>2. Understanding HTML Tags</h2>
 
@@ -48,15 +48,15 @@ const IntroToHTML = function() {
           
           <h3>Links</h3>
           <p>Use the <code>&lt;a&gt;</code> tag to create a link:</p>
-          <pre>
-            <code>&lt;a href="https://www.example.com"&gt;Visit Example&lt;/a&gt;</code>
-          </pre>
+          <SyntaxHighlighter language="html" style={twilight}>
+{`<a href="https://www.example.com">Visit Example</a>`}
+          </SyntaxHighlighter>
 
           <h3>Images</h3>
           <p>Use the <code>&lt;img&gt;</code> tag to embed an image:</p>
-          <pre>
-            <code>&lt;img src="image.jpg" alt="Description of image"&gt;</code>
-          </pre>
+          <SyntaxHighlighter language="html" style={twilight}>
+{`<img src="image.jpg" alt="Description of image">`}
+          </SyntaxHighlighter>
           
           <h2>4. Conclusion</h2>
           

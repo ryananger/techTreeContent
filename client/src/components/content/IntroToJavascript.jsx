@@ -1,4 +1,6 @@
 import React from 'react';
+import { Prism as SyntaxHighlighter } from 'react-syntax-highlighter';
+import { twilight } from 'react-syntax-highlighter/dist/esm/styles/prism';
 
 const IntroToJavascript = function() {
   return (
@@ -16,13 +18,11 @@ const IntroToJavascript = function() {
         
         <h2>2. JavaScript Syntax</h2>
         <p>JavaScript syntax refers to the set of rules that define a correctly structured JavaScript program. Here’s a simple example:</p>
-        <pre>
-          <code>
-            // This is a comment in JavaScript<br/>
-            let message = 'Hello, World!';<br/>
-            console.log(message); // Outputs: Hello, World!
-          </code>
-        </pre>
+        <SyntaxHighlighter language="javascript" style={twilight}>
+{`// This is a comment in JavaScript
+let message = 'Hello, World!';
+console.log(message); // Outputs: Hello, World!`}
+        </SyntaxHighlighter>
         <p>In this example, we declare a variable <code>message</code> and assign it a string value. 
         The <code>console.log()</code> function is used to output the value to the browser’s console.</p>
         
@@ -34,19 +34,17 @@ const IntroToJavascript = function() {
           <li><strong>Numbers:</strong> Numeric values. (e.g., <code>42</code> or <code>3.14</code>)</li>
           <li><strong>Booleans:</strong> True or false values. (e.g., <code>true</code> or <code>false</code>)</li>
           <li><strong>Arrays:</strong> Ordered lists of values. (e.g., <code>[1, 2, 3]</code>)</li>
-          <li><strong>Objects:</strong> Collections of key-value pairs. (e.g., <code>&#123; name: 'Alice', age: 30 &#125;</code>)</li>
+          <li><strong>Objects:</strong> Collections of key-value pairs. (e.g., <code>{`{name: 'Alice', age: 30}`}</code>)</li>
         </ul>
         
         <h2>4. Functions</h2>
         <p>Functions are reusable blocks of code that perform a specific task. You define a function using the <code>function</code> keyword:</p>
-        <pre>
-          <code>
-            function greet(name) &#123;<br/>
-            &nbsp;&nbsp;return 'Hello, ' + name + '!';<br/>
-            &#125;<br/>
-            console.log(greet('Alice')); // Outputs: Hello, Alice!
-          </code>
-        </pre>
+        <SyntaxHighlighter language="javascript" style={twilight}>
+{`function greet(name) {
+  return 'Hello, ' + name + '!';
+}
+console.log(greet('Alice')); // Outputs: Hello, Alice!`}
+        </SyntaxHighlighter>
         <p>In this example, the <code>greet</code> function takes a <code>name</code> as an argument and returns a greeting message.</p>
         
         <h2>5. Control Structures</h2>
@@ -55,45 +53,41 @@ const IntroToJavascript = function() {
           <li><strong>Conditionals:</strong> Use <code>if</code>, <code>else if</code>, and <code>else</code> to execute code based on a condition.</li>
           <li><strong>Loops:</strong> Use <code>for</code>, <code>while</code>, and <code>do...while</code> loops to repeat code.</li>
         </ul>
-        <pre>
-          <code>
-            let number = 5;<br/><br/>
-            if (number {`>`} 0) &#123;<br/>
-            &nbsp;&nbsp;console.log('Positive number');<br/>
-            &#125; else &#123;<br/>
-            &nbsp;&nbsp;console.log('Non-positive number');<br/>
-            &#125;<br/>
-            <br/>
-            for (let i = 0; i {`<`} 5; i++) &#123;<br/>
-            &nbsp;&nbsp;console.log(i);<br/>
-            &#125; // Outputs: 0, 1, 2, 3, 4
-          </code>
-        </pre>
+        <SyntaxHighlighter language="javascript" style={twilight}>
+{`let number = 5;
+
+if (number > 0) {
+  console.log('Positive number');
+} else {
+  console.log('Non-positive number');
+}
+
+for (let i = 0; i < 5; i++) {
+  console.log(i);
+} // Outputs: 0, 1, 2, 3, 4`}
+        </SyntaxHighlighter>
         
         <h2>6. DOM Manipulation</h2>
         <p>The Document Object Model (DOM) represents the structure of your web page. 
           JavaScript can interact with the DOM to dynamically update content, style, and structure:</p>
-        <pre>
-          <code>
-            // Get an element by its ID<br/>
-            let element = document.getElementById('myElement');<br/>
-            <br/>
-            // Change the content of the element<br/>
-            element.textContent = 'Hello, DOM!';
-          </code>
-        </pre>
+        <SyntaxHighlighter language="javascript" style={twilight}>
+{`// Get an element by its ID
+let element = document.getElementById('myElement');
+
+// Change the content of the element
+element.textContent = 'Hello, DOM!';`}
+        </SyntaxHighlighter>
         
         <h2>7. Event Handling</h2>
         <p>JavaScript can respond to user interactions, such as clicks, key presses, or form submissions, by adding event listeners:</p>
-        <pre>
-          <code>
-            // Add a click event listener to a button<br/>
-            let button = document.getElementById('myButton');<br/><br/>
-            button.addEventListener('click', function() &#123;<br/>
-            &nbsp;&nbsp;alert('Button clicked!');<br/>
-            &#125;);
-          </code>
-        </pre>
+        <SyntaxHighlighter language="javascript" style={twilight}>
+{`// Add a click event listener to a button
+let button = document.getElementById('myButton');
+
+button.addEventListener('click', function() {
+  alert('Button clicked!');
+});`}
+        </SyntaxHighlighter>
         
         <h2>8. Conclusion</h2>
         <p>JavaScript is a versatile and powerful language that is essential for modern web development. 

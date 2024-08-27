@@ -19,7 +19,11 @@ pre {
   padding: 2vh;
   margin: 2vh;
   border-radius: 2vh;
-  background-color: rgba(0, 0, 0, 0.295);
+  background-color: rgba(0, 0, 0, 0.473) !important;
+  text-wrap: pretty !important;
+  white-space: unset !important;
+  border: none !important;
+  box-shadow: none !important;
 }
 
 .upNext {
@@ -29,5 +33,5 @@ pre {
   margin: 2vh;
   box-sizing: border-box;
   border-radius: 2vh;
-  background-color: rgba(0, 0, 0, 0.295);
+  background-color: rgba(0, 0, 0, 0.473);
 }

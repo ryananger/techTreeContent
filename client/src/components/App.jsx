@@ -12,10 +12,13 @@ import Home from './Home.jsx';
 import Login from './Login.jsx';
 import Foot from './Foot.jsx';
 
-import GettingStarted from './content/GettingStarted.jsx';
 import IntroToHTML from './content/IntroToHTML.jsx';
 import IntroToCSS from './content/IntroToCSS.jsx';
 import IntroToJavascript from './content/IntroToJavascript.jsx';
+import GettingStarted from './content/GettingStarted.jsx';
+import SetupReact from './content/SetupReact.jsx';
+import MyFirstReactApp from './content/MyFirstReactApp.jsx';
+import TicTacToe from './content/ticTacToe.jsx';
 
 const isMobile = st.isMobile = window.innerWidth < 1024;
 
@@ -34,6 +37,9 @@ const App = function() {
     introToCSS: <IntroToCSS/>,
     introToJavascript: <IntroToJavascript/>,
     gettingStarted: <GettingStarted/>,
+    setupReact: <SetupReact/>,
+    myFirstReactApp: <MyFirstReactApp/>,
+    ticTacToe: <TicTacToe/>,
     unfound: '404'
   };
 
