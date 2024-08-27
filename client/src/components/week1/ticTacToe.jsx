@@ -39,14 +39,18 @@ export default App;`}
 
 const Square = function({value, onClick}) {
   return (
-    <button className="square" onClick={onClick}>
-      {value}
+    <button className="square" style={{width: '72px', aspectRatio: 1}} onClick={onClick}>
+      {value ? value : '...'}
     </button>
   );
 };
 
 export default Square;`}
         </SyntaxHighlighter>
+        <p>
+          The <code>Square</code> component receives <code>value</code> and <code>onClick</code> from the parent component, <code>Board</code>.
+          This enables us to reuse the component flexibly.
+        </p>
 
         <h2>3. Creating the Board Component</h2>
         <p>The <code>Board</code> component is responsible for rendering the 3x3 grid of squares and managing the game state. We'll build this component step by step.</p>
@@ -59,7 +63,7 @@ import Square from './Square.jsx';
 
 const Board = function() {
   const renderSquare = function(i) {
-    return <Square value={i} />;
+    return <Square value={squares[i]} onClick={()=>{handleClick(i)}}/>;
   };
 
   return (
@@ -91,7 +95,7 @@ export default Board;`}
         <h3>Step 2: Manage Board State</h3>
         <p>Next, let's manage the state of the board by adding state to track the squares and the current player:</p>
         <SyntaxHighlighter language="javascript" style={twilight}>
-{`import React, { useState } from 'react';
+{`import React, {useState} from 'react';
 import Square from './Square.jsx';
 
 const Board = function() {
@@ -102,6 +106,7 @@ const Board = function() {
     if (squares[i]) return;
 
     const nextSquares = squares.slice();
+
     nextSquares[i] = xIsNext ? 'X' : 'O';
     setSquares(nextSquares);
     setXIsNext(!xIsNext);
@@ -128,15 +133,17 @@ const Board = function() {
 
   for (let i = 0; i < lines.length; i++) {
     const [a, b, c] = lines[i];
+
     if (squares[a] && squares[a] === squares[b] && squares[a] === squares[c]) {
       return squares[a];
     }
   }
 
   return null;
-};
+};`}    </SyntaxHighlighter>
 
-const winner = calculateWinner(squares);
+        <SyntaxHighlighter language="javascript" style={twilight}>
+{`const winner = calculateWinner(squares);
 
 let status;
 
@@ -152,7 +159,7 @@ if (winner) {
         <h3>Full Board Component</h3>
         <p>Here's the full <code>Board</code> component after all the steps:</p>
         <SyntaxHighlighter language="javascript" style={twilight}>
-{`import React, { useState } from 'react';
+{`import React, {useState} from 'react';
 import Square from './Square.jsx';
 
 const Board = function() {
@@ -163,17 +170,20 @@ const Board = function() {
     if (squares[i] || calculateWinner(squares)) return;
 
     const nextSquares = squares.slice();
+
     nextSquares[i] = xIsNext ? 'X' : 'O';
     setSquares(nextSquares);
     setXIsNext(!xIsNext);
   };
 
   const renderSquare = function(i) {
-    return <Square value={squares[i]} onClick={() => handleClick(i)} />;
+    return <Square value={squares[i]} onClick={()=>{handleClick(i)}}/>;
   };
 
   const winner = calculateWinner(squares);
+
   let status;
+
   if (winner) {
     status = 'Winner: ' + winner;
   } else {
@@ -204,12 +214,19 @@ const Board = function() {
 
 const calculateWinner = function(squares) {
   const lines = [
-    [0, 1, 2], [3, 4, 5], [6, 7, 8],
-    [0, 3, 6], [1, 4, 7], [2, 5, 8],
-    [0, 4, 8], [2, 4, 6]
+    [0, 1, 2], 
+    [3, 4, 5], 
+    [6, 7, 8],
+    [0, 3, 6], 
+    [1, 4, 7], 
+    [2, 5, 8],
+    [0, 4, 8], 
+    [2, 4, 6]
   ];
+
   for (let i = 0; i < lines.length; i++) {
     const [a, b, c] = lines[i];
+
     if (squares[a] && squares[a] === squares[b] && squares[a] === squares[c]) {
       return squares[a];
     }

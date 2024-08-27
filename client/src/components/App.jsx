@@ -32,14 +32,14 @@ const App = function() {
   const [menuOpen, setMenuOpen] = useState(false);
 
   const views = {
-    home:     <Home/>,
-    introToHTML: <IntroToHTML/>,
-    introToCSS: <IntroToCSS/>,
+    home:              <Home/>,
+    introToHTML:       <IntroToHTML/>,
+    introToCSS:        <IntroToCSS/>,
     introToJavascript: <IntroToJavascript/>,
-    gettingStarted: <GettingStarted/>,
-    setupReact: <SetupReact/>,
-    myFirstReactApp: <MyFirstReactApp/>,
-    ticTacToe: <TicTacToe/>,
+    gettingStarted:    <GettingStarted/>,
+    setupReact:        <SetupReact/>,
+    myFirstReactApp:   <MyFirstReactApp/>,
+    ticTacToe:         <TicTacToe/>,
     unfound: '404'
   };
 

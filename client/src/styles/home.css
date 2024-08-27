@@ -47,6 +47,20 @@ header {
   text-align: center;
 }
 
+.weekNav {
+  top: 6vh;
+  left: 2vh;
+}
+
+.weekButton {
+  cursor: pointer;
+}
+
+.weekButton:hover,
+.on {
+  color: var(--hover);
+}
+
 @media (max-width: 1024px) {
   .headExtra {
     left: unset;

@@ -4,10 +4,17 @@ import '../styles/home.css';
 import '../styles/content.css';
 import st from 'ryscott-st';
 
+import Week1 from './week1/Week1.jsx';
+
 var count = 0;
 
 const Home = function() {
+  const [week, setWeek] = useState(1);
   const [opt, setOpt] = useState(taglines[0]);
+
+  const weeks = {
+    week1: <Week1/>
+  };
 
   var switchOption = function() {
     if (st.isMobile) {
@@ -37,14 +44,18 @@ const Home = function() {
         <p className={`headerTagline ${st.isMobile ? '' : 'float'}`}>Welcome to techTree Academy, where we {opt}</p>
         <small className={`headerExtra float`}>no robots were harmed in the creation of this website</small>
       </header>
-      <div className='content h'>
-        <a className='contentCard v c' href='/content-introToHTML'>Intro to HTML</a>
-        <a className='contentCard v c' href='/content-introToCSS'>Intro to CSS</a>
-        <a className='contentCard v c' href='/content-introToJavascript'>Intro to JavaScript</a>
-        <a className='contentCard v c' href='/content-gettingStarted'>Getting Started with Node.js</a>
-        <a className='contentCard v c' href='/content-setupReact'>Setting up a React Project from Scratch</a>
-        <a className='contentCard v c' href='/content-myFirstReactApp'>My First React App</a>    
-        <a className='contentCard v c' href='/content-ticTacToe'>Tic Tac Toe</a>   
+      <div className='content h anchor'>
+        <div className='weekNav float v'>
+          <h3 className={week === 1 ? 'weekButton on' : 'weekButton'} onClick={()=>{setWeek(1)}}>1</h3>
+          <h3 className={week === 2 ? 'weekButton on' : 'weekButton'} onClick={()=>{setWeek(2)}}>2</h3>
+          <h3 className={week === 3 ? 'weekButton on' : 'weekButton'} onClick={()=>{setWeek(3)}}>3</h3>
+          <h3 className={week === 4 ? 'weekButton on' : 'weekButton'} onClick={()=>{setWeek(4)}}>4</h3>
+          <h3 className={week === 5 ? 'weekButton on' : 'weekButton'} onClick={()=>{setWeek(5)}}>5</h3>
+          <h3 className={week === 6 ? 'weekButton on' : 'weekButton'} onClick={()=>{setWeek(6)}}>6</h3>
+          <h3 className={week === 7 ? 'weekButton on' : 'weekButton'} onClick={()=>{setWeek(7)}}>7</h3>
+          <h3 className={week === 8 ? 'weekButton on' : 'weekButton'} onClick={()=>{setWeek(8)}}>8</h3>
+        </div>
+        {weeks['week' + week]}
       </div>
     </>
   );
