@@ -12,6 +12,12 @@ const Week2 = function() {
     <div className='contentCardContainer v c'>
       <a className='contentCard v c' href='/content-scope'><div className='contentCardText'>Understanding Scope</div></a>
     </div>
+    <div className='contentCardContainer v c'>
+      <a className='contentCard v c' href='/content-finishingTicTacToe'><div className='contentCardText'>Finishing Tic Tac Toe</div></a>
+    </div>
+    <div className='contentCardContainer v c'>
+      <a className='contentCard v c' href='/content-updatingStyles'><div className='contentCardText'>Updating Styles for Tic Tac Toe</div></a>
+    </div>
     </>
   )
 };

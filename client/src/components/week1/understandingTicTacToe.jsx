@@ -2,7 +2,7 @@ import React from 'react';
 import {Prism as SyntaxHighlighter} from 'react-syntax-highlighter';
 import {twilight} from 'react-syntax-highlighter/dist/esm/styles/prism';
 
-const IntroToHTML = function() {
+const UnderstandingTicTacToe = function() {
   return (
     <div className='contentPage v c'>
       <h1>Understanding the Tic Tac Toe App</h1>
@@ -183,4 +183,4 @@ if (winner) {
   );
 };
 
-export default IntroToHTML;
+export default UnderstandingTicTacToe;

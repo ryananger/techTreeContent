@@ -2,7 +2,7 @@ import React from 'react';
 import {Prism as SyntaxHighlighter} from 'react-syntax-highlighter';
 import {twilight} from 'react-syntax-highlighter/dist/esm/styles/prism';
 
-const IntroToHTML = function() {
+const Scope = function() {
   return (
     <div className='contentPage v c'>
       <h1>Understanding Scope</h1>
@@ -121,10 +121,10 @@ export default Counter;
 
       </div>
       <h3 className='upNext v c'>
-        <a href='/content-gettingStarted'>Up Next: Getting Started with Node.js</a>
+        <a href='/content-finishingTicTacToe'>Up Next: Finishing Tic Tac Toe</a>
       </h3>
     </div>
   );
 };
 
-export default IntroToHTML;
+export default Scope;

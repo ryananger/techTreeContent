@@ -173,6 +173,15 @@ import Square from './Square.jsx';
 const Board = function() {
   const [squares, setSquares] = useState(Array(9).fill(null));
   const [xIsNext, setXIsNext] = useState(true);
+  const winner = calculateWinner(squares);
+
+  let status;
+
+  if (winner) {
+    status = 'Winner: ' + winner;
+  } else {
+    status = 'Next player: ' + (xIsNext ? 'X' : 'O');
+  }
 
   const handleClick = function(i) {
     if (squares[i] || calculateWinner(squares)) return;
@@ -187,16 +196,6 @@ const Board = function() {
   const renderSquare = function(i) {
     return <Square value={squares[i]} onClick={()=>{handleClick(i)}}/>;
   };
-
-  const winner = calculateWinner(squares);
-
-  let status;
-
-  if (winner) {
-    status = 'Winner: ' + winner;
-  } else {
-    status = 'Next player: ' + (xIsNext ? 'X' : 'O');
-  }
 
   return (
     <div>

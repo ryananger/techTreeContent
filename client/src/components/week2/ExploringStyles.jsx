@@ -2,7 +2,7 @@ import React from 'react';
 import {Prism as SyntaxHighlighter} from 'react-syntax-highlighter';
 import {twilight} from 'react-syntax-highlighter/dist/esm/styles/prism';
 
-const IntroToHTML = function() {
+const ExploringStyles = function() {
   return (
     <div className='contentPage v c'>
       <h1>Exploring Styles</h1>
@@ -86,4 +86,4 @@ body {
   );
 };
 
-export default IntroToHTML;
+export default ExploringStyles;

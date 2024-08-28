@@ -24,6 +24,8 @@ import UnderstandingTicTacToe from './week1/understandingTicTacToe.jsx';
 import ApplyingStyle from './week2/ApplyingStyle.jsx';
 import ExploringStyles from './week2/ExploringStyles.jsx';
 import Scope from './week2/Scope.jsx';
+import FinishingTicTacToe from './week2/FinishingTicTacToe.jsx';
+import UpdatingStyles from './week2/UpdatingStyles.jsx';
 
 const isMobile = st.isMobile = window.innerWidth < 1024;
 
@@ -49,9 +51,11 @@ const App = function() {
     ticTacToe:              <TicTacToe/>,
     understandingTicTacToe: <UnderstandingTicTacToe/>,
     //week2
-    applyingStyle: <ApplyingStyle/>,
-    exploringStyles: <ExploringStyles/>,
-    scope: <Scope/>,
+    applyingStyle:      <ApplyingStyle/>,
+    exploringStyles:    <ExploringStyles/>,
+    scope:              <Scope/>,
+    finishingTicTacToe: <FinishingTicTacToe/>,
+    updatingStyles:     <UpdatingStyles/>,
     unfound: '404'
   };
 
