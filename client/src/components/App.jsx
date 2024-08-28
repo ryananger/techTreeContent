@@ -20,7 +20,10 @@ import SetupReact from './week1/SetupReact.jsx';
 import MyFirstReactApp from './week1/MyFirstReactApp.jsx';
 import TicTacToe from './week1/ticTacToe.jsx';
 import UnderstandingTicTacToe from './week1/understandingTicTacToe.jsx';
+
 import ApplyingStyle from './week2/ApplyingStyle.jsx';
+import ExploringStyles from './week2/ExploringStyles.jsx';
+import Scope from './week2/Scope.jsx';
 
 const isMobile = st.isMobile = window.innerWidth < 1024;
 
@@ -47,6 +50,8 @@ const App = function() {
     understandingTicTacToe: <UnderstandingTicTacToe/>,
     //week2
     applyingStyle: <ApplyingStyle/>,
+    exploringStyles: <ExploringStyles/>,
+    scope: <Scope/>,
     unfound: '404'
   };
 

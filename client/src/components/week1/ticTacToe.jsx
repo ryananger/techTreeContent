@@ -70,17 +70,17 @@ const Board = function() {
 
   return (
     <div>
-      <div className="boardRow">
+      <div className='boardRow'>
         {renderSquare(0)}
         {renderSquare(1)}
         {renderSquare(2)}
       </div>
-      <div className="boardRow">
+      <div className='boardRow'>
         {renderSquare(3)}
         {renderSquare(4)}
         {renderSquare(5)}
       </div>
-      <div className="boardRow">
+      <div className='boardRow'>
         {renderSquare(6)}
         {renderSquare(7)}
         {renderSquare(8)}
@@ -159,6 +159,11 @@ if (winner) {
 
         <p>This code checks if there is a winner after each move and updates the game status accordingly.</p>
 
+        <p>We also need to add a <code>div</code> to our component HTML to render the status.</p>
+        <SyntaxHighlighter language="javascript" style={twilight}>
+{`<div className='status'>{status}</div>`}
+        </SyntaxHighlighter>
+
         <h3>Full Board Component</h3>
         <p>Here's the full <code>Board</code> component after all the steps:</p>
         <SyntaxHighlighter language="javascript" style={twilight}>
@@ -195,18 +200,18 @@ const Board = function() {
 
   return (
     <div>
-      <div className="status">{status}</div>
-      <div className="boardRow">
+      <div className='status'>{status}</div>
+      <div className='boardRow'>
         {renderSquare(0)}
         {renderSquare(1)}
         {renderSquare(2)}
       </div>
-      <div className="boardRow">
+      <div className='boardRow'>
         {renderSquare(3)}
         {renderSquare(4)}
         {renderSquare(5)}
       </div>
-      <div className="boardRow">
+      <div className='boardRow'>
         {renderSquare(6)}
         {renderSquare(7)}
         {renderSquare(8)}

@@ -35,7 +35,7 @@ cd my-react-app`}
         <h2>4. Setting Up Babel and Webpack</h2>
         <p>Babel and Webpack are essential tools for compiling your React code and bundling your application. Install the necessary packages:</p>
         <SyntaxHighlighter language="bash" style={twilight}>
-{`npm install --save-dev @babel/core @babel/preset-env @babel/preset-react babel-loader webpack webpack-cli webpack-dev-server html-webpack-plugin`}
+{`npm install --save-dev @babel/core @babel/preset-env @babel/preset-react babel-loader style-loader css-loader webpack webpack-cli webpack-dev-server html-webpack-plugin`}
         </SyntaxHighlighter>
 
         <p>Create a <code>webpack.config.js</code> file in your project root:</p>
@@ -58,6 +58,10 @@ module.exports = {
         use: {
           loader: 'babel-loader'
         }
+      },
+      {
+        test: /\.css$/,
+        use: ['style-loader', 'css-loader'],
       }
     ]
   },

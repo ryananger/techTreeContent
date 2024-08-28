@@ -73,21 +73,21 @@ if (winner) {
         
         <h2>5. Returning the JSX</h2>
         <p>Finally, the component returns JSX that renders the board:</p>
-        <SyntaxHighlighter language="javascript" style={twilight}>
+        <SyntaxHighlighter language='javascript' style={twilight}>
 {`return (
   <div>
-    <div className="status">{status}</div>
-    <div className="boardRow">
+    <div className='status'>{status}</div>
+    <div className='boardRow'>
       {renderSquare(0)}
       {renderSquare(1)}
       {renderSquare(2)}
     </div>
-    <div className="boardRow">
+    <div className='boardRow'>
       {renderSquare(3)}
       {renderSquare(4)}
       {renderSquare(5)}
     </div>
-    <div className="boardRow">
+    <div className='boardRow'>
       {renderSquare(6)}
       {renderSquare(7)}
       {renderSquare(8)}
@@ -101,7 +101,7 @@ if (winner) {
         <h2>6. Define the Winning Combinations</h2>
         <p>Next, we'll look at the <code>calculateWinner</code> function</p>
         <p>The game can be won in several ways: by having three of the same symbols in a row, column, or diagonal. The <code>lines</code> array stores all possible winning combinations:</p>
-        <SyntaxHighlighter language="javascript" style={twilight}>
+        <SyntaxHighlighter language='javascript' style={twilight}>
 {`const lines = [
   [0, 1, 2],  // Top row
   [3, 4, 5],  // Middle row
