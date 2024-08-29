@@ -26,16 +26,20 @@ import ExploringStyles from './week2/ExploringStyles.jsx';
 import Scope from './week2/Scope.jsx';
 import FinishingTicTacToe from './week2/FinishingTicTacToe.jsx';
 import UpdatingStyles from './week2/UpdatingStyles.jsx';
+import IntroToGitHub from './week2/IntroToGitHub.jsx';
+import DeployToGitHub from './week2/DeployToGitHub.jsx';
+import ImplementingViews from './week3/ImplementingViews.jsx';
+import CreatingHome from './week3/CreatingHome.jsx';
 
 const isMobile = st.isMobile = window.innerWidth < 1024;
 
 const route = st.route = window.location.pathname.slice(1);
 
 const App = function() {
-  const [user, setUser] = st.newState('user', useState(null));
+  const [user, setUser]   = st.newState('user', useState(null));
   const [login, setLogin] = st.newState('login', useState(false));
-  const [week, setWeek] = st.newState('week', useState(null));
-  const [view, setView] = st.newState('view', useState(!route || route.includes('week') ? 'home' : route));
+  const [week, setWeek]   = st.newState('week', useState(null));
+  const [view, setView]   = st.newState('view', useState(!route || route.includes('week') ? 'home' : route));
   
   const [menuOpen, setMenuOpen] = useState(false);
 
@@ -56,6 +60,11 @@ const App = function() {
     scope:              <Scope/>,
     finishingTicTacToe: <FinishingTicTacToe/>,
     updatingStyles:     <UpdatingStyles/>,
+    introToGitHub:      <IntroToGitHub/>,
+    deployToGitHub:     <DeployToGitHub/>,
+    //week3
+    implementingViews: <ImplementingViews/>,
+    creatingHome:      <CreatingHome/>,
     unfound: '404'
   };
 

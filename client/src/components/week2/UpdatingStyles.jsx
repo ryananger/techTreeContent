@@ -71,7 +71,7 @@ button:hover {
 
       </div>
       <h3 className='upNext v c'>
-        <a href='/content-gettingStarted'>Up Next: Getting Started with Node.js</a>
+        <a href='/content-introToGitHub'>Up Next: Intro to GitHub</a>
       </h3>
     </div>
   );

@@ -6,6 +6,7 @@ import st from 'ryscott-st';
 
 import Week1 from './week1/Week1.jsx';
 import Week2 from './week2/Week2.jsx';
+import Week3 from './week3/Week3.jsx';
 
 var count = 0;
 
@@ -14,7 +15,8 @@ const Home = function() {
 
   const weeks = {
     week1: <Week1/>,
-    week2: <Week2/>
+    week2: <Week2/>,
+    week3: <Week3/>
   };
 
   var switchOption = function() {

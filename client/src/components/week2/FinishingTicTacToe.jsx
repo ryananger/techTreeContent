@@ -74,7 +74,8 @@ if (winner) {
       {renderSquare(7)}
       {renderSquare(8)}
     </div>
-    {(winner || draw) && <button className='resetButton v c' onClick={handleReset}>RESET</button>}
+    {(winner || draw) && 
+    <button className='resetButton v c' onClick={handleReset}>RESET</button>}
   </div>
 );`}
         </SyntaxHighlighter>

@@ -7,8 +7,9 @@ const ExploringStyles = function() {
     <div className='contentPage v c'>
       <h1>Exploring Styles</h1>
       <div className='contentView'>
+        <p>Next, we will explore some more advanced styling for our Tic Tac Toe app.</p>
         <h2>1. Base Styling for HTML and Body</h2>
-        <p>The following CSS resets the margin and padding for the entire document and sets a consistent font and background style for your Tic Tac Toe game.</p>
+        <p>The following CSS resets the margin and padding for the entire document and sets a consistent font and background style for your Tic Tac Toe app.</p>
         <SyntaxHighlighter language="css" style={twilight}>
 {`html,
 body {
