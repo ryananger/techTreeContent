@@ -9,7 +9,7 @@ const UpdatingStyles = function() {
       <div className='contentView'>
         <p>We’ve made several changes to the CSS styling of our Tic-Tac-Toe game to improve the visual appearance and layout. Let’s break down each of the updates:</p>
 
-        <h3>1. Anchor Class</h3>
+        <h2>1. Anchor Class</h2>
         <p>The <code>.anchor</code> class adds positioning capabilities, used for positioning elements like the reset button:</p>
 
         <SyntaxHighlighter language="css" style={twilight}>
@@ -20,7 +20,7 @@ const UpdatingStyles = function() {
 
         <p>Using <code>position: relative;</code> ensures that any absolutely positioned elements within can be positioned relative to this container.</p>
 
-        <h3>2. Square Style</h3>
+        <h2>2. Square Style</h2>
         <p>The <code>.square</code> class has been minimized and much of the styling moved to the <code>button</code> style:</p>
 
         <SyntaxHighlighter language="css" style={twilight}>
@@ -32,7 +32,7 @@ const UpdatingStyles = function() {
 }`}
         </SyntaxHighlighter>
 
-        <h3>3. Button Styling</h3>
+        <h2>3. Button Styling</h2>
         <p>General button styles and specific styles for the reset button have been added:</p>
 
         <SyntaxHighlighter language="css" style={twilight}>
@@ -66,7 +66,7 @@ button:hover {
 
         <p>The reset button is positioned absolutely relative to the <code>.anchor</code> container, ensuring it appears just below the board when the game ends.</p>
 
-        <h3>Conclusion</h3>
+        <h2>Conclusion</h2>
         <p>These styling changes enhance the overall appearance of the Tic-Tac-Toe game, making it more user-friendly and visually appealing. Flexbox is used to center elements, and the reset button is added with smooth transitions and positioning.</p>
 
       </div>

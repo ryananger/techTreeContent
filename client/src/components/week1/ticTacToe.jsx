@@ -12,7 +12,6 @@ const TicTacToe = function() {
         <h2>1. Creating the App Component</h2>
         <p>We'll begin by creating the main component, <code>App</code>, which will render the game board and manage the overall state of the game.</p>
 
-        <h3>Step 1: Create the <code>App</code> Component</h3>
         <p>Open the <code>src/App.jsx</code> file and add the following code:</p>
         <SyntaxHighlighter language="javascript" style={twilight}>
 {`import React from 'react';
@@ -32,7 +31,6 @@ export default App;`}
         <h2>2. Creating the Square Component</h2>
         <p>Next, let's create the <code>Square</code> component. This component represents each square on the Tic-Tac-Toe board.</p>
 
-        <h3>Step 1: Create the <code>Square</code> Component</h3>
         <p>Open the <code>src/Square.jsx</code> file and add the following code:</p>
         <SyntaxHighlighter language="javascript" style={twilight}>
 {`import React from 'react';

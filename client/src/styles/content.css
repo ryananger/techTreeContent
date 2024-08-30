@@ -25,7 +25,7 @@ pre {
   border-radius: 2vh;
   background-color: rgba(0, 0, 0, 0.473) !important;
   text-wrap: pretty !important;
-  white-space: unset !important;
+  /* white-space: unset !important; */
   border: none !important;
   box-shadow: none !important;
 }

@@ -9,7 +9,7 @@ const Scope = function() {
       <div className='contentView'>
         <p>Scope in JavaScript determines the accessibility or visibility of variables, functions, and objects in some particular part of your code during runtime. Understanding scope is crucial to avoid bugs and to write clean, maintainable code, especially when working with React state management.</p>
 
-        <h3>Types of Scope</h3>
+        <h2>1. Types of Scope</h2>
         <p>There are two main types of scope in JavaScript:</p>
         <ul>
           <li><strong>Global Scope:</strong> Variables declared outside of any function or block have global scope, meaning they can be accessed from anywhere in the code.</li>
@@ -31,7 +31,7 @@ console.log(globalVariable); // Accessible here too
 
         <p>In this example, <code>globalVariable</code> is defined in the global scope, so it can be accessed both inside the function and outside of it.</p>
 
-        <h3>Function Scope</h3>
+        <h2>2. Function Scope</h2>
         <p>Variables declared within a function are only accessible within that function. This is known as function scope.</p>
 
         <SyntaxHighlighter language="javascript" style={twilight}>
@@ -47,7 +47,7 @@ console.log(localVariable); // Uncaught ReferenceError: localVariable is not def
 
         <p>In this example, <code>localVariable</code> is declared inside <code>functionScope</code> and can only be accessed within that function. Trying to access it outside the function results in an error.</p>
 
-        <h3>Block Scope</h3>
+        <h2>3. Block Scope</h2>
         <p>Block scope is created with block statements like <code>if</code>, <code>for</code>, and <code>while</code>. Variables declared with <code>let</code> or <code>const</code> inside these blocks are block-scoped.</p>
 
         <SyntaxHighlighter language="javascript" style={twilight}>
@@ -62,7 +62,7 @@ console.log(blockScopedVariable); // Uncaught ReferenceError: blockScopedVariabl
 
         <p>In this example, <code>blockScopedVariable</code> is only accessible inside the <code>if</code> block. Trying to access it outside the block results in an error.</p>
 
-        <h3>Lexical Scope</h3>
+        <h2>4. Lexical Scope</h2>
         <p>JavaScript uses lexical (or static) scoping, meaning that the scope of a variable is determined by its location within the source code. Functions have access to variables defined in their outer scopes, even after those functions are executed.</p>
 
         <SyntaxHighlighter language="javascript" style={twilight}>
@@ -83,7 +83,7 @@ newFunction(); // Outputs: I am from outer scope
 
         <p>In this example, <code>innerFunction</code> can access <code>outerVariable</code> due to lexical scoping, even after <code>outerFunction</code> has finished executing.</p>
 
-        <h3>Scope in React State Management</h3>
+        <h2>5. Scope in React State Management</h2>
         <p>Understanding scope is also essential in React, especially when managing state within components. React state is typically managed using the <code>useState</code> hook, which creates local state variables within a component’s scope.</p>
 
         <SyntaxHighlighter language="javascript" style={twilight}>

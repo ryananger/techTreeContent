@@ -7,7 +7,7 @@ const ApplyingStyle = function() {
     <div className='contentPage v c'>
       <h1>Applying Style</h1>
       <div className='contentView'>
-
+        <p>In order to style your app, create a CSS file in your <code>src</code> directory (e.g., <code>src/styles.css</code>), and add your custom styles.</p>
         <h2>1. Centering the Game Board</h2>
         <p>First, we'll use Flexbox to center the entire Tic Tac Toe board in the middle of the page. This ensures the game is visually centered, no matter the screen size.</p>
 
@@ -126,25 +126,9 @@ const ApplyingStyle = function() {
           <li><code>border-radius</code>: Add rounded corners for visual appeal.</li>
         </ul>
         <h2>4. Importing Styles into App.jsx</h2>
-        <p>To apply your custom CSS styles to your React components, you need to import the CSS file into your <code>App.jsx</code> file. This ensures that the styles are available to all the components within your app.</p>
+        <p>To apply your custom CSS styles to your React components, you need to import the CSS file into your <code>App.jsx</code> file. 
+        This ensures that the styles are available to all the components within your app.</p>
 
-        <h3>Step 1: Create a CSS File</h3>
-        <p>Create a CSS file in your <code>src</code> directory (e.g., <code>src/styles.css</code>), and add your custom styles:</p>
-
-        <SyntaxHighlighter language="css" style={twilight}>
-{`/* src/styles.css */
-.gameBoard {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  height: 100vh;
-}
-
-...`}
-        </SyntaxHighlighter>
-
-        <h3>Step 2: Import the CSS File in App.jsx</h3>
         <p>In your <code>App.jsx</code> file, import the CSS file at the top of the file:</p>
 
         <SyntaxHighlighter language="javascript" style={twilight}>

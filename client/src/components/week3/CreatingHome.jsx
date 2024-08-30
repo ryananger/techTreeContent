@@ -7,10 +7,9 @@ const CreatingHome = function() {
     <div className='contentPage v c'>
       <h1>Creating Home.jsx</h1>
       <div className='contentView'>
-        <h2>1. Creating the Home Component</h2>
         <p>In this section, we'll create the <code>Home</code> component for the homepage of our application. This will include an image slideshow and some introductory text.</p>
 
-        <h3>Step 1: Set Up the <code>Home</code> Component</h3>
+        <h2>1. Set Up the <code>Home</code> Component</h2>
         <p>Create a new file named <code>Home.jsx</code> inside the <code>src/components</code> directory. 
         The first step is to import the necessary React hooks and define the basic structure of the component. We will also create an array of images:</p>
 
@@ -46,7 +45,7 @@ export default Home;`}
         <p>
           Now, your app will compile and you will see a navigation bar with buttons "home" and "game" and you'll be greeted by the "Welcome!" from your <code>Home</code> component.
         </p>
-        <h3>Step 2: Add the Image Slideshow Logic</h3>
+        <h2>2. Add the Image Slideshow Logic</h2>
         <p>Next, we'll add the image slideshow functionality using the <code>useEffect</code> hook. This hook will automatically update the image every 5 seconds:</p>
 
         <SyntaxHighlighter language="javascript" style={twilight}>
@@ -70,7 +69,7 @@ export default Home;`}
           <li>The <code>clearTimeout</code> function ensures that the timer is cleared when the component is unmounted, preventing memory leaks.</li>
         </ul>
 
-        <h3>Step 3: Render the Image Slideshow</h3>
+        <h2>3. Render the Image Slideshow</h2>
         <p>Now, we'll render the image slideshow inside the <code>Home</code> component:</p>
 
         <SyntaxHighlighter language="javascript" style={twilight}>
@@ -126,6 +125,7 @@ const Home = function() {
     </div>
 );`}
         </SyntaxHighlighter>
+        <h2>4. Update the CSS</h2>
         <p>
           Let's adjust the CSS to account for these changes to the <code>App</code> and <code>Home</code> components.
         </p>
@@ -193,7 +193,7 @@ const Home = function() {
 
       </div>
       <h3 className='upNext v c'>
-        <a href='/content-creatingHome'>Up Next: Creating Home.jsx</a>
+        <a href='/content-creatingGallery'>Up Next: Creating a Gallery</a>
       </h3>
     </div>
   );
