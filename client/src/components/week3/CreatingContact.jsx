@@ -116,7 +116,7 @@ import emailjs from '@emailjs/browser';`}
 
       </div>
       <h3 className='upNext v c'>
-        <a href='/content-gettingStarted'>Up Next: Getting Started with Node.js</a>
+        <a href='/content-introToProps'>Up Next: Intro to Props and State Management</a>
       </h3>
     </div>
   );

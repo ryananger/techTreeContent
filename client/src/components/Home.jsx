@@ -7,6 +7,11 @@ import st from 'ryscott-st';
 import Week1 from './week1/Week1.jsx';
 import Week2 from './week2/Week2.jsx';
 import Week3 from './week3/Week3.jsx';
+import Week4 from './week4/Week4.jsx';
+import Week5 from './week5/Week5.jsx';
+import Week6 from './week6/Week6.jsx';
+import Week7 from './week7/Week7.jsx';
+import Week8 from './week8/Week8.jsx';
 
 var count = 0;
 
@@ -16,7 +21,12 @@ const Home = function() {
   const weeks = {
     week1: <Week1/>,
     week2: <Week2/>,
-    week3: <Week3/>
+    week3: <Week3/>,
+    week4: <Week4/>,
+    // week5: <Week5/>,
+    // week6: <Week6/>,
+    // week7: <Week7/>,
+    // week8: <Week8/>
   };
 
   var switchOption = function() {
@@ -53,10 +63,10 @@ const Home = function() {
           <h3 className={st.week === 2 ? 'weekButton on' : 'weekButton'} onClick={()=>{st.setWeek(2)}}>2</h3>
           <h3 className={st.week === 3 ? 'weekButton on' : 'weekButton'} onClick={()=>{st.setWeek(3)}}>3</h3>
           <h3 className={st.week === 4 ? 'weekButton on' : 'weekButton'} onClick={()=>{st.setWeek(4)}}>4</h3>
-          <h3 className={st.week === 5 ? 'weekButton on' : 'weekButton'} onClick={()=>{st.setWeek(5)}}>5</h3>
+          {/* <h3 className={st.week === 5 ? 'weekButton on' : 'weekButton'} onClick={()=>{st.setWeek(5)}}>5</h3>
           <h3 className={st.week === 6 ? 'weekButton on' : 'weekButton'} onClick={()=>{st.setWeek(6)}}>6</h3>
           <h3 className={st.week === 7 ? 'weekButton on' : 'weekButton'} onClick={()=>{st.setWeek(7)}}>7</h3>
-          <h3 className={st.week === 8 ? 'weekButton on' : 'weekButton'} onClick={()=>{st.setWeek(8)}}>8</h3>
+          <h3 className={st.week === 8 ? 'weekButton on' : 'weekButton'} onClick={()=>{st.setWeek(8)}}>8</h3> */}
         </div>
         {weeks['week' + st.week]}
       </div>

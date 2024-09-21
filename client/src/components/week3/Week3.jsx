@@ -1,6 +1,6 @@
 import React from 'react';
 
-const Week2 = function() {
+const Week3 = function() {
   return (
     <>
     <div className='contentCardContainer v c'>
@@ -20,9 +20,15 @@ const Week2 = function() {
     </div>
     <div className='contentCardContainer v c'>
       <a className='contentCard v c' href='/content-creatingContact'><div className='contentCardText'>Creating a Contact Form</div></a>
+    </div>    
+    <div className='contentCardContainer v c'>
+      <a className='contentCard v c' href='/content-introToProps'><div className='contentCardText'>Intro to Props and State Management</div></a>
+    </div>
+    <div className='contentCardContainer v c'>
+      <a className='contentCard v c' href='/content-creatingNavButton'><div className='contentCardText'>Creating a NavButton</div></a>
     </div>
     </>
   )
 };
 
-export default Week2;
+export default Week3;

@@ -28,12 +28,17 @@ import FinishingTicTacToe from './week2/FinishingTicTacToe.jsx';
 import UpdatingStyles from './week2/UpdatingStyles.jsx';
 import IntroToGitHub from './week2/IntroToGitHub.jsx';
 import DeployToGitHub from './week2/DeployToGitHub.jsx';
+
 import ImplementingViews from './week3/ImplementingViews.jsx';
 import CreatingHome from './week3/CreatingHome.jsx';
 import CreatingGallery from './week3/CreatingGallery.jsx';
 import CreatingContact from './week3/CreatingContact.jsx';
 import InstallingDotenv from './week3/InstallingDotenv.jsx';
 import IntroToAsync from './week3/IntroToAsync.jsx';
+import IntroToProps from './week3/IntroToProps.jsx';
+import CreatingNavButton from './week3/CreatingNavButton.jsx';
+
+import FrontEndProject from './week4/FrontEndProject.jsx';
 
 const isMobile = st.isMobile = window.innerWidth < 1024;
 
@@ -70,10 +75,13 @@ const App = function() {
     implementingViews: <ImplementingViews/>,
     creatingHome:      <CreatingHome/>,
     creatingGallery:   <CreatingGallery/>,
-    creatingContact:   <CreatingContact/>,
     installingDotenv:  <InstallingDotenv/>,
     introToAsync:      <IntroToAsync/>,
-    unfound: '404'
+    creatingContact:   <CreatingContact/>,
+    introToProps:      <IntroToProps/>,
+    creatingNavButton: <CreatingNavButton/>,
+    //week4
+    frontEndProject:   <FrontEndProject/>
   };
 
   var handleLogin = function() {
